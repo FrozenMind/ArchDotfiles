@@ -1,0 +1,79 @@
+
+
+#
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="dd.mm.yyyy"
+
+#==============================================================================
+# Paths
+#==============================================================================
+
+# Set the the list of directories that cd searches.
+cdpath+=(~)
+cdpath+=(~/projects)
+
+
+#==============================================================================
+# Functions
+#==============================================================================
+
+# weather forecast
+# ================
+weather() {
+  curl -4 -k https://wttr.in/$1
+}
+
+# Create new directory and cd into it
+# ===================================
+alias md='__make_and_change_directory'
+
+__make_and_change_directory() {
+    for v in "$@"
+    do
+        mkdir "$v"
+        cd "$v"
+    done
+}
+
+# Useful enter-key
+# ================
+__magic-enter () {
+  if [[ -z $BUFFER ]]; then
+    echo ""
+    if git rev-parse --is-inside-work-tree &>/dev/null; then
+      git status
+    else
+      ls
+    fi
+    zle redisplay
+  else
+    zle accept-line
+  fi
+}
+zle -N __magic-enter
+bindkey "^M" __magic-enter
+
+#==============================================================================
+# Aliases
+#==============================================================================
+
+alias vi=vim
+alias view='vim -R'
+alias grep='nocorrect grep --color=always -d skip'
+alias cp='nocorrect cp -i' # confirm before overwriting something
+alias df='df -h' # human-readable sizes
+alias free='free -m' # show sizes in MB
+alias ls='ls -FX --group-directories-first --color=always --human-readable'
+
+export DEFAULT_USER=valentin

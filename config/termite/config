@@ -1,0 +1,49 @@
+[options]
+resize_grip = false
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = false
+mouse_autohide = true
+allow_bold = true
+dynamic_title = false
+urgent_on_bell = true
+clickable_url = true
+font = Monospace 12
+scrollback_lines = 1000
+search_wrap = true
+cursor_blink = off
+cursor_shape = block
+browser = firefox
+
+
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+
+[colors]
+#! Solarized color scheme
+#! http://ethanschoonover.com/solarized
+
+foreground = #ffffff
+background = rgba(128, 0, 128, 0.7)
+
+# 16 color palette
+# ----------------
+color0  = #073642
+color1  = #dc322f
+color2  = #859900
+color3  = #b58900
+color4  = #268bd2
+color5  = #d33682
+color6  = #2aa198
+color7  = #eee8d5
+color8  = #002b36
+color9  = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
+
