@@ -93,7 +93,7 @@ font-0 = hack:size=10;1
 font-1 = FontAwesome:size=11;-1
 
 modules-left = bspwm
-modules-center = cpu memory
+modules-center = cpu temp memory
 modules-right = updates date
 
 try-position = right
@@ -223,4 +223,48 @@ menu-2-1-exec = shutdown -h now
 menu-2-2 = Back
 menu-2-2-foreground = $(colors.red)
 menu-2-2-exec = menu-open-0
+
+
+[module/temp]
+type = internal/temperature
+
+; Seconds to sleep between updates
+interval = 5
+
+; Thermal zone to use
+; To list all the zone types, run
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Threshold temperature to display warning label
+warn-temperature = 60
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+; Available tokens:
+;   %temperature% (default)
+label = %temperature%
+
+; Available tokens:
+;   %temperature% (default)
+label-warn =  █ %temperature% !
+label-warn-foreground = #0
+
+; Requires the <ramp> tag
+; The icon selection will range from 0 to `warn-temperature`
+; with the current temperature as index.
+ramp-0 = ▁
+ramp-1 = ▃
+ramp-2 = ▅
+ramp-foreground = $(colors.red)
+
 
