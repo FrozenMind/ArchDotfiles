@@ -152,7 +152,7 @@ type = internal/cpu
 ; Default: 1
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU %percentage%
+label = CPU %percentage%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -169,7 +169,7 @@ type = internal/memory
 interval = 3
 
 format = <label>
-label = RAM %percentage_used%/%gb_free%
+label = RAM %percentage_used%% / %gb_free%
 
 ;bar-used-indicator =
 ;bar-used-width = 50
@@ -266,5 +266,6 @@ ramp-0 = ▁
 ramp-1 = ▃
 ramp-2 = ▅
 ramp-foreground = $(colors.red)
+
 
 

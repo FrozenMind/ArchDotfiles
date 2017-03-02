@@ -8,7 +8,9 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 
 # Launch the bar
+echo "Launching left bar ..."
 polybar left -q &
+echo "Done loading left bar."
+echo "Launching right bar ..."
 polybar right -q &
-
-echo "Launched the main bar ..."
+echo "Done loading right bar."
