@@ -26,7 +26,7 @@ browser = firefox
 #! http://ethanschoonover.com/solarized
 
 foreground = #ffffff
-background = rgba(128, 0, 128, 0.7)
+background = rgba(70, 6, 6, 0.7)
 
 # 16 color palette
 # ----------------

@@ -78,7 +78,6 @@ alias view='vim -R'
 alias grep='nocorrect grep --color=always -d skip'
 alias cp='nocorrect cp -i' # confirm before overwriting something
 alias df='df -h' # human-readable sizes
-alias free='free -m' # show sizes in MB
 alias ls='ls -FX --group-directories-first --color=always --human-readable'
 
 export DEFAULT_USER=valentin

@@ -140,7 +140,7 @@ type = internal/date
 ;date = %%{F#666}%%{F#cc} %d-%m-%Y %%{F#666}%%{F#cc} %H:%M
 ;interval = 5
 label = %{F#5a647e}%{F-} %date% %{F#5a647e}%{F-} %time%
-date = %d-%m-%Y
+date = %d/%m/%Y
 time = %H:%M
 interval = 5
 
@@ -220,9 +220,13 @@ menu-2-1 = Shutdown
 menu-2-1-foreground = ${colors.green}
 menu-2-1-exec = shutdown -h now
 
-menu-2-2 = Back
-menu-2-2-foreground = $(colors.red)
-menu-2-2-exec = menu-open-0
+menu-2-2 = Lock off
+menu-2-2-foreground = ${colors.green}
+menu-2-2-exec = bspc quit
+
+menu-2-3 = Back
+menu-2-3-foreground = $(colors.red)
+menu-2-3-exec = menu-open-0
 
 
 [module/temp]
