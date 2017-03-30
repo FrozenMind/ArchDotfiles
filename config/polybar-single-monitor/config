@@ -206,7 +206,7 @@ adapter = ACAD
 label-charging = %percentage%%
 label-charging-foreground = ${colors.green}
 label-discharging = %percentage%%
-label-discharging-foreground = ${colors.red}
+label-discharging-foreground = ${colors.grey}
 label-full = 
 label-full-foreground = ${colors.grey}
 
@@ -214,12 +214,16 @@ format-charging = <label-charging> <ramp-capacity>
 format-discharging = <label-discharging> <ramp-capacity>
 format-full = <label-full>
 
-ramp-capacity-0 = %{F#da4939}
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.red}
 ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.yellow}
 ramp-capacity-3 = 
-ramp-capacity-4 = %{F#5a647e}
-ramp-capacity-foreground = ${colors.yellow}
+ramp-capacity-3-foreground = ${colors.yellow}
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.green}
 
 
 [module/mpd]

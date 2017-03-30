@@ -8,6 +8,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 
 # Launch the bar
-echo "Launching left bar ..."
+echo "Launching main bar ..."
 polybar main -q &
-echo "Done loading bar."
+echo "Done loading main bar."
