@@ -1,0 +1,48 @@
+#!/bin/zsh
+
+sxhkd &
+
+ws1=home
+ws2=browse
+ws3=files
+ws4=music
+ws5=code
+ws6=android
+ws7=empty1
+ws8=empty2
+ws9=empty3
+ws0=empty4
+
+bspc config border_width          2
+bspc config window_gap            3
+bspc config top_padding           30
+
+bspc config split_ratio           0.52
+bspc config single_monocle        true
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_by_distance     true
+bspc config history_aware_focus   true
+bspc config focus_follows_pointer false
+bspc config pointer_follows_focus false
+bspc config click_to_focus        true
+bspc config adaptive_raise        true
+
+bspc monitor -d $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $w0
+
+#bspc desktop $ws2 -l monocle
+
+bspc rule -a Firefox desktop=^2
+bspc rule -a Chromium desktop=^2 floating=on follow=on
+bspc rule -a Spotify desktop=^4
+bspc rule -a Termite desktop=^1
+bspc rule -a nautilus desktop=^3
+bspc rule -a Atom desktop=^5
+bspc rule -a android-studio desktop=^6
+
+compton -b &
+udiskie -q &
+feh --bg-center ~/Pictures/archwallpaper.png
+xss-lock -- physlock -sm &
+~/.config/polybar/launch.sh
+xrdb ~/.Xresources
