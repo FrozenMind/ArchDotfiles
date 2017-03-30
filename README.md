@@ -17,6 +17,8 @@ From time to time I'm going to create my own ones but I need a great userfriendl
 * Mainbaord: Asus Z170-A
 * Processor: Intel i5 6600K
 * Video Card: 4GB Gigabyte GeForce GTX 970 Windforce 3X OC Aktiv
-* Ram: 8 Gb
+* Ram: 16 Gb
 * Left Monitor: Acer S242HLCBID 24 Zoll
 * Right Monitor: Acer S271HLAbid 27 Zoll
+
+##Single Monitor Config is for single monitor laptop
