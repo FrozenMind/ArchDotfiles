@@ -47,7 +47,7 @@ foreground = ${colors.lgreen}
 line-size   = 2
 line-color  = ${colors.extra5}
 
-border-bottom-size = 1
+border-bottom-size = 0
 border-bottom-color = ${colors.extra4}
 
 padding = 1
