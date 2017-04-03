@@ -318,20 +318,20 @@ menu-3-1-exec = menu-open-0
 ; vim:ft=dosini
 
 [module/cpu]                                                     
-  1 type = internal/cpu                                              
-  2                                                                  
-  3 ; Seconds to sleep between updates                               
-  4 ; Default: 1
-  5 interval = 0.5
-  6 format = <label> <ramp-coreload>
-  7 label = CPU %percentage%%
-  8 
-  9 ramp-coreload-0 = ▁
- 10 ramp-coreload-1 = ▂
- 11 ramp-coreload-2 = ▃
- 12 ramp-coreload-3 = ▄
- 13 ramp-coreload-4 = ▅
- 14 ramp-coreload-5 = ▆
- 15 ramp-coreload-6 = ▇
- 16 ramp-coreload-7 = █
+type = internal/cpu                                              
+                                                                  
+; Seconds to sleep between updates                               
+; Default: 1
+interval = 1
+format = <label> <ramp-coreload>
+label = CPU %percentage%%
+ 
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
 

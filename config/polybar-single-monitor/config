@@ -14,6 +14,7 @@ silver  = #e6e1dc
 white   = #f9f7f3
 red     = #da4939
 green   = #a5c261
+lgreen  = #00ff00
 yellow  = #ffc66d
 blue    = #6d9cbe
 purple  = #b6b3eb
@@ -35,13 +36,13 @@ bottom = false
 fixed-center = true
 
 width = 100%
-height = 30
+height = 30 
 
 offset-x = 0
 offset-y = 0
 
 background = ${colors.bg}
-foreground = ${colors.green}
+foreground = ${colors.lgreen}
 
 line-size   = 2
 line-color  = ${colors.extra5}
@@ -58,7 +59,7 @@ font-1 = "FontAwesome:size=11;2"
 font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm updates
-modules-center = wifi wired cpu
+modules-center = wifi wired
 modules-right = battery volume date powermenu
 
 dim-value = 1.0
@@ -137,7 +138,7 @@ label-occupied = %icon%
 label-occupied-padding = 1
 
 label-urgent = %icon%
-label-urgent-background = ${colors.green}
+label-urgent-background = ${colors.lgreen}
 label-urgent-padding = 1
 
 label-empty = %icon%
@@ -204,7 +205,7 @@ battery = BAT1
 adapter = ACAD
 
 label-charging = %percentage%%
-label-charging-foreground = ${colors.green}
+label-charging-foreground = ${colors.lgreen}
 label-discharging = %percentage%%
 label-discharging-foreground = ${colors.grey}
 label-full = 
@@ -223,7 +224,7 @@ ramp-capacity-2-foreground = ${colors.yellow}
 ramp-capacity-3 = 
 ramp-capacity-3-foreground = ${colors.yellow}
 ramp-capacity-4 = 
-ramp-capacity-4-foreground = ${colors.green}
+ramp-capacity-4-foreground = ${colors.lgreen}
 
 
 [module/mpd]
@@ -268,7 +269,7 @@ label-time-foreground = #77
 [module/updates]
 type = custom/script
 exec = ~/.bin/getpacmanupdates
-format-foreground = ${colors.green}
+format-foreground = ${colors.lgreen}
 interval = 360
 
 
@@ -317,21 +318,21 @@ menu-3-1-exec = menu-open-0
 
 ; vim:ft=dosini
 
-[module/cpu]                                                     
-type = internal/cpu                                              
+;[module/cpu]                                                     
+;type = internal/cpu                                              
                                                                   
 ; Seconds to sleep between updates                               
 ; Default: 1
-interval = 1
-format = <label> <ramp-coreload>
-label = CPU %percentage%%
+;interval = 1
+;format = <label> <ramp-coreload>
+;label = CPU %percentage%%
  
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+;ramp-coreload-0 = ▁
+;ramp-coreload-1 = ▂
+;ramp-coreload-2 = ▃
+;ramp-coreload-3 = ▄
+;ramp-coreload-4 = ▅
+;ramp-coreload-5 = ▆
+;ramp-coreload-6 = ▇
+;ramp-coreload-7 = █
 
