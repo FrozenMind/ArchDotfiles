@@ -42,7 +42,7 @@ bspc rule -a android-studio desktop=^6
 
 compton -b &
 udiskie -q &
-feh --bg-center ~/Pictures/archwallpaper.png
+feh --bg-center ~/Pictures/archwallpapergreen.png
 xss-lock -- physlock -sm &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
