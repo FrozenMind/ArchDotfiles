@@ -79,5 +79,6 @@ alias grep='nocorrect grep --color=always -d skip'
 alias cp='nocorrect cp -i' # confirm before overwriting something
 alias df='df -h' # human-readable sizes
 alias ls='ls -FX --group-directories-first --color=always --human-readable'
+alias updatePac='sudo pacman -Syu'
 
 export DEFAULT_USER=valentin

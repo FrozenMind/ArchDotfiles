@@ -10,7 +10,7 @@
     word_wrap = yes
     ignore_newline = no
     geometry = "400x5-25+55"
-    transparency = 10
+    transparency = 0
     idle_threshold = 120
     monitor = 0
     follow = keyboard
@@ -26,7 +26,7 @@
     browser = /usr/bin/firefox -new-tab
     icon_position = left
     max_icon_size = 100
-   # icon_folders = /usr/share/icons/la-capitaine-icon-theme/status/scalable-dark/:/usr/share/icons/la-capitaine-icon-theme/devices/scalable-dark/:/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/
+    icon_folders = /usr/share/icons/Adwaita
 
 [frame]
     width = 2

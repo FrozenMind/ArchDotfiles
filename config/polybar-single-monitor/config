@@ -58,8 +58,8 @@ font-0 = "Overpass Mono:size=11;2"
 font-1 = "FontAwesome:size=11;2"
 font-2 = "Overpass:size=11;2"
 
-modules-left = bspwm updates
-modules-center = wifi wired
+modules-left = bspwm updates wifi wired
+modules-center = github
 modules-right = battery volume date powermenu
 
 dim-value = 1.0
@@ -347,4 +347,21 @@ menu-4-1-exec = menu-open-0
 ;ramp-coreload-5 = ▆
 ;ramp-coreload-6 = ▇
 ;ramp-coreload-7 = █
+
+
+[module/github]
+type = internal/github
+; Accessing an access token stored in file
+token = ${file:/home/valentin/.gitaccesstoken}
+; Whether empty notifications should be displayed or not
+empty-notifications = false
+
+; Available tags:
+;   <label> (default)
+format = <label>
+
+; Available tokens:
+;   %notifications% (default)
+; Default: Notifications: %notifications%
+label = %notifications%
 

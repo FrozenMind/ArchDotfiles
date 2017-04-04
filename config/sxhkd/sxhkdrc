@@ -22,6 +22,10 @@ super + Escape
 super + alt + Escape
 	bspc quit
 
+#lock screen
+super + l
+  xset s activate
+
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
