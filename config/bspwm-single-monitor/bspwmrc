@@ -46,3 +46,4 @@ feh --bg-center ~/Pictures/archwallpapergreen.png
 xss-lock -- i3lock &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
+~/.bin/autostart.sh
