@@ -54,7 +54,7 @@ set background=dark
 let base16colorspace=256
 
 " Use solarized theme
-colorscheme base16-railscasts
+colorscheme base16-isotope
 
 " Set the standard encoding
 set encoding=utf8

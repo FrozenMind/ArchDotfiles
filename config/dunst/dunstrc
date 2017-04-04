@@ -29,7 +29,7 @@
     icon_folders = /usr/share/icons/Adwaita
 
 [frame]
-    width = 2
+    width = 1
     color = "#6d9cbe"
 
 [shortcuts]
@@ -50,17 +50,17 @@
 
 [base16_low]
     msg_urgency = low
-    background = "#272935"
-    foreground = "#5a647e"
+    background = "#404040"
+    foreground = "#808080"
 
 [base16_normal]
     msg_urgency = normal
-    background = "#3a4055"
-    foreground = "#e6e1dc"
+    background = "#606060"
+    foreground = "#d0d0d0"
 
 [base16_critical]
     msg_urgency = critical
     background = "#ff0000"
-    foreground = "#f4f1ed"
+    foreground = "#e0e0e0"
 
 # vim: ft=cfg
