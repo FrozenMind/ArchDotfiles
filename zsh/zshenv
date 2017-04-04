@@ -10,3 +10,5 @@ export XDG_CONFIG_HOME=$HOME/.config
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+export _JAVA_AWT_WM_NONREPARENTING=1

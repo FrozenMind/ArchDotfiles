@@ -14,7 +14,7 @@ silver  = #e6e1dc
 white   = #f9f7f3
 red     = #da4939
 green   = #a5c261
-lgreen  = #00ff00
+lgreen  = #cc00ff00
 yellow  = #ffc66d
 blue    = #6d9cbe
 purple  = #b6b3eb
@@ -142,7 +142,7 @@ label-urgent-background = ${colors.lgreen}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.grey}
+label-empty-foreground = #0affffff
 label-empty-padding = 1
 
 

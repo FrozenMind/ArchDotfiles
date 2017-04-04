@@ -21,7 +21,7 @@ filetype off
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 " A color scheme
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 " show git-diff in the sign column
 Plug 'airblade/vim-gitgutter'
 " Undotree
@@ -50,8 +50,11 @@ syntax on
 " Set background-color
 set background=dark
 
+" Set colorsheme
+let base16colorspace=256
+
 " Use solarized theme
-colorscheme solarized
+colorscheme base16-railscasts
 
 " Set the standard encoding
 set encoding=utf8
@@ -123,7 +126,7 @@ set sidescrolloff=20
 
 " Set the amount of columns to scroll horizontally, when the end of
 " the window is reached.
-set sidescroll=35
+set sidescroll=100
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "

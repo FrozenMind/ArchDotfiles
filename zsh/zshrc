@@ -5,8 +5,8 @@
 #
 
 #prompt
-PROMPT=' >> '
-RPROMPT='%F{yellow}%1~%f'
+#PROMPT=' >> '
+#RPROMPT='%F{yellow}%1~%f'
 
 
 # Source zim

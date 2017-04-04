@@ -4,8 +4,8 @@
 
 UPDATE_COUNT=$(checkupdates | wc -l)
 if [ "$UPDATE_COUNT" -gt 0 ]; then
-  upd=$UPDATE_COUNT' Updates Available!'
+  upd=''$UPDATE_COUNT
   echo $upd
 else
-  echo 'System Is Up To Date'
+  echo ''
 fi
