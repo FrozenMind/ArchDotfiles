@@ -156,6 +156,16 @@ format-connected = <label-connected> <ramp-signal>
 label-connected =  %essid:0:15:...%
 label-connected-font = 3
 
+format-disconnected = <label-disconnected>
+label-disconnected = 
+label-disconnected-foreground = #ffa64c
+
+format-packetloss = <animation-packetloss>
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
+
 ramp-signal-0 = 😱
 ramp-signal-1 = 😠
 ramp-signal-2 = 😒
@@ -335,7 +345,6 @@ menu-4-1 = 
 menu-4-1-foreground = ${colors.red}
 menu-4-1-exec = menu-open-0
 
-; vim:ft=dosini
 
 ;[module/cpu]                                                     
 ;type = internal/cpu                                              
@@ -372,3 +381,5 @@ format = <label>
 ; Default: Notifications: %notifications%
 label = %notifications%
 
+
+; vim:ft=dosini
