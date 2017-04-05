@@ -152,9 +152,16 @@ interface = wlp3s0
 interval = 3.0
 ;udspeed-minwidth = 3
 
-format-connected = <label-connected>
+format-connected = <label-connected> <ramp-signal>
 label-connected =  %essid:0:15:...%
 label-connected-font = 3
+
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
 
 
 [module/wired]
