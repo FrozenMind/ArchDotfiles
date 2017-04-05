@@ -1,0 +1,6 @@
+*.swp
+node-modules
+*.log
+*.bak
+*.backup
+
