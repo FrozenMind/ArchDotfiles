@@ -47,6 +47,7 @@ bspc rule -a android-studio desktop=^7
 compton -b &
 udiskie -q &
 feh --bg-center ~/Pictures/programming-world-map-on.jpg
-xss-lock -- physlock -sm &
+xss-lock -- i3lock &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
+~/.bin/autostart.sh
