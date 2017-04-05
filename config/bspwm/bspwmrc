@@ -47,7 +47,7 @@ bspc rule -a android-studio desktop=^7
 compton -b &
 udiskie -q &
 feh --bg-center ~/Pictures/background.jpg
-xss-lock -- i3lock -i lockscreen.png &
+xss-lock -- i3lock -i ~/Pictures/lockscreen.png &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
 ~/.bin/towerautostart.sh
