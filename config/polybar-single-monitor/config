@@ -186,7 +186,7 @@ label-connected-font = 3
 [module/date]
 type = internal/date
 label = %{F-} %date% %{F-} %time%
-date = %d-%m-%Y
+date = %A %d-%m-%Y
 time = %H:%M
 interval = 5
 
