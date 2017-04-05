@@ -1,5 +1,5 @@
 while true; do
-  BATTLIFE=$(acpi -b | cut -c25-26)
+  BATTLIFE=$(acpi -b | awk '{print $4}' | cut -c1-2)
   if [ "$BATTLIFE" -lt 20 ]
     then
       notify-send -u critical "BATTERY LOWER THAN 20%"
