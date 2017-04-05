@@ -1,3 +1,3 @@
 notify-send "Hallo"
-./battery_check.sh
+~/.bin/battery_check.sh
 
