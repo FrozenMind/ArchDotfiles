@@ -1,2 +1,2 @@
-notify-send "Hallo"
+notify-send "Hallo $USER"
 
