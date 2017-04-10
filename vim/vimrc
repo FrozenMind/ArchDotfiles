@@ -118,11 +118,11 @@ set iskeyword-=_
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set leading/trailing lines for the cursor when moving vertically.
-set scrolloff=7
+set scrolloff=5
 
 " Set leading/trailing columns for the cursor when moving
 " horizontally.
-set sidescrolloff=20
+set sidescrolloff=0
 
 " Set the amount of columns to scroll horizontally, when the end of
 " the window is reached.
