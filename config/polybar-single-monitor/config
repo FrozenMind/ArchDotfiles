@@ -211,7 +211,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 
 ramp-headphones-0 = 
-;ramp-headphones-1 = 
+ramp-headphones-1 = 
 
 
 [module/battery]
