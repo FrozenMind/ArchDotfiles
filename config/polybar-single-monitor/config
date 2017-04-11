@@ -117,8 +117,8 @@ ws-icon-4 = code;
 ws-icon-5 = android;
 ws-icon-6 = empty1;
 ws-icon-7 = empty2;
-ws-icon-8 = empty3;
-ws-icon-9 = empty4;
+ws-icon-8 = empty3;
+ws-icon-9 = vbox;
 ws-icon-default = 
 
 format = <label-state>

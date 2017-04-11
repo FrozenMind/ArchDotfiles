@@ -11,7 +11,7 @@ ws6=android
 ws7=empty1
 ws8=empty2
 ws9=empty3
-ws0=empty4
+ws0=vbox
 
 bspc config border_width          2
 bspc config window_gap            3
@@ -28,7 +28,7 @@ bspc config pointer_follows_focus false
 bspc config click_to_focus        true
 bspc config adaptive_raise        true
 
-bspc monitor -d $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $w0
+bspc monitor -d $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $ws0
 
 #bspc desktop $ws2 -l monocle
 
@@ -39,6 +39,7 @@ bspc rule -a Termite desktop=^1
 bspc rule -a nautilus desktop=^3
 bspc rule -a Atom desktop=^5
 bspc rule -a android-studio desktop=^6
+bspc rule -a VirtualBox state=floating desktop=^10
 
 compton -b &
 udiskie -q &
