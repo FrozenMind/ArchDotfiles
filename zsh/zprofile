@@ -4,7 +4,7 @@
 
 # Editors
 # =======
-export EDITOR='nvim'
+export EDITOR='vim'
 export DIFF='vimdiff'
 export VISUAL='vim'
 
