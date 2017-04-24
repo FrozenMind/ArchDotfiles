@@ -80,5 +80,6 @@ alias cp='nocorrect cp -i' # confirm before overwriting something
 alias df='df -h' # human-readable sizes
 alias ls='ls -FX --group-directories-first --color=always --human-readable'
 alias updatePac='sudo pacman -Syu'
+alias updateAur='yaourt -Syu --aur'
 
 export DEFAULT_USER=valentin
