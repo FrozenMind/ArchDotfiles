@@ -59,8 +59,8 @@ font-1 = "FontAwesome:size=11;2"
 font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm updates wifi wired
-modules-center = github
-modules-right = battery volume date powermenu
+modules-center = battery volume
+modules-right = date powermenu
 
 dim-value = 1.0
 
@@ -305,42 +305,6 @@ menu-4-0-exec = shutdown -h now
 menu-4-1 = 
 menu-4-1-foreground = ${colors.red}
 menu-4-1-exec = menu-open-0
-
-
-;[module/cpu]                                                     
-;type = internal/cpu                                              
-                                                                  
-; Seconds to sleep between updates                               
-; Default: 1
-;interval = 1
-;format = <label> <ramp-coreload>
-;label = CPU %percentage%%
- 
-;ramp-coreload-0 = ▁
-;ramp-coreload-1 = ▂
-;ramp-coreload-2 = ▃
-;ramp-coreload-3 = ▄
-;ramp-coreload-4 = ▅
-;ramp-coreload-5 = ▆
-;ramp-coreload-6 = ▇
-;ramp-coreload-7 = █
-
-
-[module/github]
-type = internal/github
-; Accessing an access token stored in file
-token = ${file:/home/valentin/.gitaccesstoken}
-; Whether empty notifications should be displayed or not
-empty-notifications = false
-
-; Available tags:
-;   <label> (default)
-format = <label>
-
-; Available tokens:
-;   %notifications% (default)
-; Default: Notifications: %notifications%
-label = %notifications%
 
 
 ; vim:ft=dosini
