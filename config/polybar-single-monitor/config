@@ -7,15 +7,16 @@
 ;
 ;=====================================================
 [colors]
-bg      = #002b2bd2
-black   = #2b2b2b
+bg      = #88000000
+black   = #aa000000
 grey    = #5a647e
 silver  = #e6e1dc
 white   = #f9f7f3
 red     = #da4939
 green   = #a5c261
 lgreen  = #cc00ff00
-yellow  = #ffc66d
+lorange = #ffae19
+yellow  = #88ffc66d
 blue    = #6d9cbe
 purple  = #b6b3eb
 teal    = #519f50
@@ -42,7 +43,7 @@ offset-x = 0
 offset-y = 0
 
 background = ${colors.bg}
-foreground = ${colors.lgreen}
+foreground = ${colors.lorange}
 
 line-size   = 2
 line-color  = ${colors.extra5}
@@ -51,7 +52,7 @@ border-bottom-size = 0
 border-bottom-color = ${colors.extra4}
 
 padding = 1
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 1
 
 font-0 = "Overpass Mono:size=11;2"
@@ -59,14 +60,10 @@ font-1 = "FontAwesome:size=11;2"
 font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm updates wifi wired
-modules-center = battery volume
-modules-right = date powermenu
+modules-center = date
+modules-right = battery volume powermenu
 
 dim-value = 1.0
-
-tray-position = right
-tray-detached = false
-tray-transparent = false
 
 wm-restack = bspwm
 
@@ -112,14 +109,15 @@ enable-scroll = false
 ws-icon-0 = home;
 ws-icon-1 = browse;
 ws-icon-2 = files;
-ws-icon-3 = music;
+ws-icon-3 = mail;
 ws-icon-4 = code;
 ws-icon-5 = android;
-ws-icon-6 = empty1;
-ws-icon-7 = empty2;
-ws-icon-8 = empty3;
-ws-icon-9 = vbox;
-ws-icon-default = 
+ws-icon-6 = music;
+ws-icon-7 = vbox;
+ws-icon-8 = empty1;
+ws-icon-9 = empty2;
+ws-icon-default = 
+
 
 format = <label-state>
 
@@ -129,20 +127,20 @@ label-monitor = %name%
 label-monitor-font = 3
 
 label-focused = %icon%
-label-focused-background = ${colors.extra5}
-label-focused-overline= ${colors.extra4}
-label-focused-underline= ${colors.extra4}
+label-focused-background = ${colors.black}
+label-focused-overline= ${colors.red}
+label-focused-underline= ${colors.red}
 label-focused-padding = 1
 
 label-occupied = %icon%
 label-occupied-padding = 1
 
 label-urgent = %icon%
-label-urgent-background = ${colors.lgreen}
+label-urgent-background = ${colors.lorange}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = #0affffff
+label-empty-foreground = ${colors.black}
 label-empty-padding = 1
 
 
@@ -152,26 +150,19 @@ interface = wlp3s0
 interval = 3.0
 ;udspeed-minwidth = 3
 
-format-connected = <label-connected> <ramp-signal>
+format-connected = <label-connected>
 label-connected =  %essid:0:15:...%
 label-connected-font = 3
 
 format-disconnected = <label-disconnected>
 label-disconnected = 
-label-disconnected-foreground = #ffa64c
+label-disconnected-foreground = ${colors.red}
 
 format-packetloss = <animation-packetloss>
 animation-packetloss-0 = 
-animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-0-foreground = ${colors.red}
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
-
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
 
 
 [module/wired]
@@ -186,7 +177,7 @@ label-connected-font = 3
 [module/date]
 type = internal/date
 label = %{F-} %date% %{F-} %time%
-date = %A %d-%m-%Y
+date = %a %d.%m.
 time = %H:%M
 interval = 5
 
@@ -222,11 +213,11 @@ battery = BAT1
 adapter = ACAD
 
 label-charging = %percentage%%
-label-charging-foreground = ${colors.lgreen}
+label-charging-foreground = ${colors.lorange}
 label-discharging = %percentage%%
 label-discharging-foreground = ${colors.grey}
 label-full = 
-label-full-foreground = ${colors.grey}
+label-full-foreground = ${colors.green}
 
 format-charging = <label-charging> <ramp-capacity>
 format-discharging = <label-discharging> <ramp-capacity>
@@ -237,45 +228,45 @@ ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1 = 
 ramp-capacity-1-foreground = ${colors.red}
 ramp-capacity-2 = 
-ramp-capacity-2-foreground = ${colors.yellow}
+ramp-capacity-2-foreground = ${colors.lorange}
 ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.lgreen}
+ramp-capacity-3-foreground = ${colors.green}
 ramp-capacity-4 = 
-ramp-capacity-4-foreground = ${colors.lgreen}
+ramp-capacity-4-foreground = ${colors.green}
 
 
 [module/updates]
 type = custom/script
 exec = ~/.bin/getpacmanupdates
-format-foreground = ${colors.lgreen}
+format-foreground = ${colors.blue}
 interval = 360
 
 
 [module/powermenu]
 type = custom/menu
 
-label-open = 
+label-open = 
 label-close = 
-label-separator = /
+label-separator = -/-
 
 menu-0-0 = 
-menu-0-0-foreground = ${colors.yellow}
+menu-0-0-foreground = ${colors.blue}
 menu-0-0-exec = menu-open-1
 
 menu-0-1 = 
-menu-0-1-foreground = ${colors.yellow}
+menu-0-1-foreground = ${colors.blue}
 menu-0-1-exec = menu-open-2
 
 menu-0-2 = 
-menu-0-2-foreground = ${colors.yellow}
+menu-0-2-foreground = ${colors.blue}
 menu-0-2-exec = menu-open-3
 
 menu-0-3 = 
-menu-0-3-foreground = ${colors.yellow}
+menu-0-3-foreground = ${colors.blue}
 menu-0-3-exec = menu-open-4
 
 menu-1-0 = 
-menu-1-0-foreground = ${colors.green}
+menu-1-0-foreground = ${colors.lgreen}
 menu-1-0-exec = xset s activate
 
 menu-1-1 = 
@@ -283,7 +274,7 @@ menu-1-1-foreground = ${colors.red}
 menu-1-1-exec = menu-open-0
 
 menu-2-0 = 
-menu-2-0-foreground = ${colors.green}
+menu-2-0-foreground = ${colors.lgreen}
 menu-2-0-exec = bspc quit
 
 menu-2-1 = 
@@ -291,7 +282,7 @@ menu-2-1-foreground = ${colors.red}
 menu-2-1-exec = menu-open-0
 
 menu-3-0 = 
-menu-3-0-foreground = ${colors.green}
+menu-3-0-foreground = ${colors.lgreen}
 menu-3-0-exec = shutdown -r now
 
 menu-3-1 = 
@@ -299,7 +290,7 @@ menu-3-1-foreground = ${colors.red}
 menu-3-1-exec = menu-open-0
 
 menu-4-0 = 
-menu-4-0-foreground = ${colors.green}
+menu-4-0-foreground = ${colors.lgreen}
 menu-4-0-exec = shutdown -h now
 
 menu-4-1 = 

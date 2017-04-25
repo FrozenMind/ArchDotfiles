@@ -5,13 +5,13 @@ sxhkd &
 ws1=home
 ws2=browse
 ws3=files
-ws4=music
+ws4=mail
 ws5=code
 ws6=android
-ws7=empty1
-ws8=empty2
-ws9=empty3
-ws0=vbox
+ws7=music
+ws8=vbox
+ws9=empty1
+ws0=empty2
 
 bspc config border_width          2
 bspc config window_gap            3
@@ -34,16 +34,17 @@ bspc monitor -d $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $ws0
 
 bspc rule -a Firefox desktop=^2
 bspc rule -a Chromium desktop=^2 floating=on follow=on
-bspc rule -a Spotify desktop=^4
+bspc rule -a Thunderbird desktop=^4
 bspc rule -a Termite desktop=^1
 bspc rule -a nautilus desktop=^3
 bspc rule -a Atom desktop=^5
 bspc rule -a android-studio desktop=^6
-bspc rule -a VirtualBox state=floating desktop=^10
+bspc rule -a Spotify desktop=^7
+bspc rule -a VirtualBox state=floating desktop=^8
 
 compton -b &
 udiskie -q &
-feh --bg-center ~/Pictures/archwallpapergreen.png
+feh --bg-center ~/Pictures/orange_joker.png
 xss-lock -- i3lock -i ~/Pictures/lockscreen.png &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources

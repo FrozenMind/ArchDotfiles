@@ -11,14 +11,14 @@
     ignore_newline = no
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
     geometry = "300x5-10+40"
-    transparency = 0
+    transparency = 30
     idle_threshold = 120
     monitor = 0
     follow = keyboard
     sticky_history = no
     history_length = 0
     line_height = 0
-    separator_height = 4
+    separator_height = 0
     padding = 4
     horizontal_padding = 4
     separator_color = auto
@@ -30,8 +30,8 @@
     icon_folders = /usr/share/icons/Adwaita
 
 [frame]
-    width = 1
-    color = "#6d9cbe"
+    width = 2
+    color = "#ffae19"
 
 [shortcuts]
     close = ctrl+space
@@ -51,8 +51,8 @@
 
 [base16_low]
     msg_urgency = low
-    background = "#a0a0a0"
-    foreground = "#101010"
+    background = "#ffc66d"
+    foreground = "#0000dd"
 
 [base16_normal]
     msg_urgency = normal
@@ -61,8 +61,8 @@
 
 [base16_critical]
     msg_urgency = critical
-    background = "#ff0000"
-    foreground = "#101010"
+    background = "#bb0000"
+    foreground = "#000000"
 
 
 [dropbox_added]

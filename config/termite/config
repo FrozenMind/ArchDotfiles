@@ -28,7 +28,7 @@ browser = firefox
 foreground      = #d0d0d0
 foreground_bold = #e0e0e0
 cursor          = #e0e0e0
-background      = rgba(0,0,0,0.7)
+background      = rgba(0,0,0,0.8)
 
 # 16 color space
 
@@ -71,3 +71,6 @@ color19 = #606060
 color20 = #c0c0c0
 color21 = #e0e0e0
 
+
+
+; vim:ft=dosini
