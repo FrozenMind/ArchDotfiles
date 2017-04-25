@@ -59,9 +59,9 @@ font-0 = "Overpass Mono:size=11;2"
 font-1 = "FontAwesome:size=11;2"
 font-2 = "Overpass:size=11;2"
 
-modules-left = bspwm updates wifi wired
+modules-left = bspwm updates
 modules-center = date
-modules-right = battery volume powermenu
+modules-right = wifi wired battery volume powermenu
 
 dim-value = 1.0
 
@@ -176,7 +176,7 @@ label-connected-font = 3
 
 [module/date]
 type = internal/date
-label = %{F-} %date% %{F-} %time%
+label = %{F#88ffc66d} %{F#ffae19}%date% %{F#88ffc66d} %{F#ffae19}%time%
 date = %a %d.%m.
 time = %H:%M
 interval = 5
@@ -193,10 +193,10 @@ mapping = true
 format-volume = <ramp-volume><label-volume>
 
 label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.lorange}
 
 label-muted = 
-label-muted-foreground = ${colors.red}
+label-muted-foreground = ${colors.blue}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
