@@ -213,9 +213,9 @@ battery = BAT1
 adapter = ACAD
 
 label-charging = %percentage%%
-label-charging-foreground = ${colors.lorange}
+label-charging-foreground = ${colors.yellow}
 label-discharging = %percentage%%
-label-discharging-foreground = ${colors.grey}
+label-discharging-foreground = ${colors.yellow}
 label-full = 
 label-full-foreground = ${colors.green}
 
