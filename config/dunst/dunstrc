@@ -64,4 +64,22 @@
     background = "#ff0000"
     foreground = "#101010"
 
+
+[dropbox_added]
+  appname = Dropbox
+  summary = "*added*"
+  foreground = "#00ff00"
+  timeout = 3
+
+[dropbox_deleted]
+  appname = Dropbox
+  summary = "*deleted*"
+  foreground = "#ff0000"
+  timeout = 3
+
+[dropbox_changed]
+  appname = Dropbox
+  summary = "*changed*"
+  foreground = "#0000ff"
+  timeout = 3
 # vim: ft=cfg
