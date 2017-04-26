@@ -81,5 +81,8 @@ alias df='df -h' # human-readable sizes
 alias ls='ls -FX --group-directories-first --color=always --human-readable'
 alias updatePac='sudo pacman -Syu'
 alias updateAur='yaourt -Syu --aur'
+#calendar
+alias caly='cal -m -w -y'
+alias cal='cal -m'
 
 export DEFAULT_USER=valentin
