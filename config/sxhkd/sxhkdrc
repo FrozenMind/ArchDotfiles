@@ -10,6 +10,10 @@ super + Return
 super + space
 	rofi -show drun
 
+#show active windows
+super + Tab
+  rofi -show window
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -73,10 +77,6 @@ super + {_,shift + }c
 # focus the next/previous desktop
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
