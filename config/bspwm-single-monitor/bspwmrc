@@ -45,7 +45,7 @@ bspc rule -a VirtualBox state=floating desktop=^8
 compton -b &
 udiskie -q &
 feh --bg-center ~/Pictures/orange_joker.png
-xss-lock -- i3lock -i ~/Pictures/lockscreen.png &
+xss-lock -- i3lock -i ~/Pictures/batman.png &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
 ~/.bin/laptopautostart.sh
