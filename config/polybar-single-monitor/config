@@ -61,7 +61,7 @@ font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm caffeine updates
 modules-center = date
-modules-right = wifi wired battery volume powermenu
+modules-right = wifi wired changebrightness volume battery powermenu
 
 dim-value = 1.0
 
@@ -309,8 +309,21 @@ format-foreground = ${colors.blue}
 
 label = %output%
 
-click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; else xset +dpms; fi
+click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset +dpms; xset s on; fi
 
 
+[module/changebrightness]
+type = custom/script
+
+exec = echo ${$(xbacklight)/.*}
+interval = 3
+
+format = <label>
+format-foreground = ${colors.blue}
+
+label = %output%%
+
+click-left = if [ $(xbacklight | cut -c1-2) -lt 100 ]; then xbacklight -inc 5; fi
+click-right = if [ $(xbacklight | cut -c1-2) -gt 9 ]; then xbacklight -dec 5; fi
 
 ; vim:ft=dosini
