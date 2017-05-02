@@ -59,7 +59,7 @@ font-0 = "Overpass Mono:size=11;2"
 font-1 = "FontAwesome:size=11;2"
 font-2 = "Overpass:size=11;2"
 
-modules-left = bspwm updates
+modules-left = bspwm caffeine updates
 modules-center = date
 modules-right = wifi wired battery volume powermenu
 
@@ -296,6 +296,21 @@ menu-4-0-exec = shutdown -h now
 menu-4-1 = 
 menu-4-1-foreground = ${colors.red}
 menu-4-1-exec = menu-open-0
+
+
+[module/caffeine]
+type = custom/script
+
+exec = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then echo ""; else echo ""; fi
+interval = 3
+
+format = <label>
+format-foreground = ${colors.blue}
+
+label = %output%
+
+click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; else xset +dpms; fi
+
 
 
 ; vim:ft=dosini
