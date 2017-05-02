@@ -36,16 +36,17 @@ bspc rule -a Firefox desktop=^2
 bspc rule -a Chromium desktop=^2 floating=on follow=on
 bspc rule -a Thunderbird desktop=^4
 bspc rule -a Termite desktop=^1
-bspc rule -a nautilus desktop=^3
+bspc rule -a Nautilus desktop=^3
 bspc rule -a Atom desktop=^5
 bspc rule -a android-studio desktop=^6
 bspc rule -a Spotify desktop=^7
 bspc rule -a VirtualBox state=floating desktop=^8
+bspc rule -a Gedit state=floating
 
 compton -b &
 udiskie -q &
 feh --bg-center ~/Pictures/orange_joker.png
-xss-lock -- i3lock -i ~/Pictures/batman.png &
+xss-lock -- i3lock -i ~/Pictures/batman.png -e &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
 ~/.bin/laptopautostart.sh
