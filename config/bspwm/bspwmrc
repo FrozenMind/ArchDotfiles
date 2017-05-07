@@ -2,16 +2,16 @@
 
 sxhkd &
 
-ws1=desktop
+ws1=home
 ws2=browse
 ws3=files
-ws4=music
-ws5=cli
+ws4=mail
+ws5=empty
 ws6=code
 ws7=android
 ws8=gaming
-ws9=9
-ws0=0
+ws9=vbox
+ws0=empty
 
 bspc config border_width          2
 bspc config window_gap            3
@@ -37,17 +37,20 @@ bspc monitor HDMI-0 -d $ws1 $ws2 $ws3 $ws4 $ws5
 
 bspc rule -a Firefox desktop=^2
 bspc rule -a Chromium desktop=^2 floating=on follow=on
-bspc rule -a Spotify desktop=^4
+bspc rule -a Spotify desktop=^7
 bspc rule -a Termite desktop=^1
 bspc rule -a Steam desktop=^8
 bspc rule -a Nautilus desktop=^3
 bspc rule -a Atom desktop=^6
 bspc rule -a android-studio desktop=^7
+bspc rule -a Thunderbird desktop=^4
+bspc rule -a VirtualBox state=floating desktop=^9
+bspc rule -a Gedit state=floating
 
 compton -b &
 udiskie -q &
-feh --bg-center ~/Pictures/background.jpg
-xss-lock -- i3lock -i ~/Pictures/lockscreen.png &
+feh --bg-center ~/Pictures/jokerCards.jpg
+xss-lock -- i3lock -i ~/Pictures/lockscreen.png -e &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
 ~/.bin/towerautostart.sh
