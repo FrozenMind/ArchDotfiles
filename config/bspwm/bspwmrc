@@ -6,7 +6,7 @@ ws1=home
 ws2=browse
 ws3=files
 ws4=mail
-ws5=empty
+ws5=music
 ws6=code
 ws7=android
 ws8=gaming
@@ -37,9 +37,9 @@ bspc monitor HDMI-0 -d $ws1 $ws2 $ws3 $ws4 $ws5
 
 bspc rule -a Firefox desktop=^2
 bspc rule -a Chromium desktop=^2 floating=on follow=on
-bspc rule -a Spotify desktop=^7
+bspc rule -a Spotify desktop=^5
 bspc rule -a Termite desktop=^1
-bspc rule -a Steam desktop=^8
+bspc rule -a Steam state=floating desktop=^8
 bspc rule -a Nautilus desktop=^3
 bspc rule -a Atom desktop=^6
 bspc rule -a android-studio desktop=^7
