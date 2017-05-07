@@ -11,7 +11,7 @@
 [colors]
 bg      = #88000000
 black   = #aa000000
-grey    = #5a647e
+grey    = #885a647e
 silver  = #e6e1dc
 white   = #f9f7f3
 red     = #da4939
@@ -151,7 +151,7 @@ label-urgent-background = ${colors.lorange}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.black}
+label-empty-foreground = ${colors.grey}
 label-empty-padding = 1
 
 
@@ -227,7 +227,7 @@ label = RAM %percentage_used%% / %gb_free%
 [module/updates]
 type = custom/script
 exec = ~/.bin/getpacmanupdates
-format-foreground = #ffc66d
+format-foreground = ${colors.blue}
 interval = 360
 
 

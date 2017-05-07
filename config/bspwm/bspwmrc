@@ -30,7 +30,7 @@ bspc config adaptive_raise        true
 
 xrandr --output DVI-D-0 --primary
 
-bspc monitor DVI-D-0 -d $ws6 $ws7 $ws8 $ws9 $w0
+bspc monitor DVI-D-0 -d $ws6 $ws7 $ws8 $ws9 $ws0
 bspc monitor HDMI-0 -d $ws1 $ws2 $ws3 $ws4 $ws5
 
 #bspc desktop $ws2 -l monocle
@@ -46,6 +46,7 @@ bspc rule -a android-studio desktop=^7
 bspc rule -a Thunderbird desktop=^4
 bspc rule -a VirtualBox state=floating desktop=^9
 bspc rule -a Gedit state=floating
+bspc rule -a Gimp state=floating follow=on
 
 compton -b &
 udiskie -q &
