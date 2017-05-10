@@ -309,7 +309,7 @@ format-foreground = ${colors.blue}
 
 label = %output%
 
-click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset +dpms 600 1800 600; xset s on; fi
+click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset dpms 600 1800 1800; xset s on; fi
 
 
 [module/changebrightness]
