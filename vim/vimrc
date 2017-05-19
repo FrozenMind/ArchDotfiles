@@ -48,13 +48,13 @@ syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set background-color
-set background=dark
+set background=light
 
 " Set colorsheme
 let base16colorspace=256
 
-" Use solarized theme
-colorscheme base16-isotope
+" Use colorscheme
+colorscheme base16-flat
 
 " Set the standard encoding
 set encoding=utf8
