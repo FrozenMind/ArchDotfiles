@@ -1,0 +1,173 @@
+# Arch Linux Installation
+(UEFI, SSD&HDD, Nvidia Graphics, Encrypted, Wired Connection, BSPWM)
+
+## 0. Links
+* https://imgur.com/Hokk8sK
+...
+
+## 2. Basic Setup
+* loadkeys de-latin1
+* wifi-menu -o (wifi installation)
+* netctl start "service"
+* ping google.com
+* timedatectl set-ntp true
+* timedatectl status (check if time is right)
+
+## 3. Partiton Disks
+* lsblk (to check names)
+* gdisk /dev/sdX
+o
+y
+* Partition EFI
+n
+ENTER
+ENTER
+100 MiB
+EF00
+* Partition Boot
+n
+ENTER
+ENTER
+250 MiB
+ENTER
+* Partition root
+n
+ENTER
+ENTER
+ENTER
+ENTER
+* show partitions with p
+* write out with w
+Format
+* mkfs.vfat -F 32 /dev/sdX1
+* mkfs.ext2 /dev/sdX2
+
+## 4. Encrypt root partiton
+* cryptsetup -c aes-xts-plain64 -h sha512 -s 512 --use-random luksFormat /dev/sdX3
+YES
+Choose Password
+* cryptsetup luksOpen /dev/sdX3 2016-Global-OpSec-Champion-LyingHillary
+* pvcreate /dev/mapper/2016-Global-OpSec-Champion-LyingHillary
+* vgcreate Arch /dev/mapper/2016-Global-OpSec-Champion-LyingHillary
+* lvcreate -L +512M Arch -n swap
+* lvcreate -l +100%FREE Arch -n root
+* mkfs.ext4 /dev/mapper/Arch-root
+* mkswap /dev/mapper/Arch-swap
+
+## 5. Mount
+* mount /dev/mapper/Arch-root /mnt
+* swapon /dev/mapper/Arch-swap
+* mkdir /mnt/boot
+* mount /dev/sdX2 /mnt/boot
+* mkdir /mnt/boot/efi
+* mount /dev/sdX1 /mnt/boot/efi
+
+## 6. Install base packages
+pacstrap /mnt base base-devel grub-efi-x86_64 efibootmgr dialog wpa_supplicant
+
+## 7. Configure the system
+* genfstab -U /mnt >> /mnt/etc/fstab
+* nano /mnt/etc/fstab (check fstab carefully)
+Change relatime > noatime on boot and root partition
+
+## 8. Basic System setup
+* arch-chroot /mnt /bin/bash
+* nano /etc/locale.gen (uncomment your both en_US)
+* locale-gen
+* nano /etc/locale.conf
+LANG=en_US.UTF-8
+* tzselect
+* hwclock --systohc --utc
+
+## 9. Set up users
+* passwd (Choose root password)
+* echo yourHostname > /etc/hostname
+* useradd -m -G wheel yourName
+* passwd yourName (Choose your password)
+Edit Sudoers to allow new user to sudo
+* EDITOR=nano visudo
+##Uncomment to allow member of group..
+%wheel ALL=(ALL) ALL
+
+## 10. set up hooks
+* nano /etc/mkinitcpio.conf
+HOOKS="base udev autodetect modconf block keymap encrypt lvm2 resume filesystems keyboard fsck"
+* mkinitcpio -p linux
+
+## 11. Install grub EFI
+* grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArchLinux
+* nano /etc/default/grub
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/sdX3:2016-Global-OpSec-Champion-LyingHillary resume=/dev/mapper/Arch-swap"
+* grub-mkconfig -o /boot/grub/grub.cfg
+
+## 12. reboot
+* exit
+* umount -R /mnt
+* swapoff -a
+* reboot
+Log in as normal user
+
+## 12. enable multilib
+* nano /etc/pacman.conf (Uncomment following lines)
+# Misc options
+Color
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+## 18. Add archlinuxfr and yaourt
+* nano /etc/pacman.conf
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+* sudo pacman -Sy
+* sudo pacman -S yaourt
+
+* pacman -Sy && reboot
+
+## 14. Default video driver
+log in as regular user
+* sudo pacman -S xf86-video-vesa
+* sudo pacman -S mesa
+* sudo pacman -S xorg-server xorg-xinit xterm
+
+## 15. Nvidia Drivers
+* sudo pacman -S nvidia nvidia-settings lib32-nvidia-libgl
+
+## 16. Install dekstop environment
+* sudo pacman -S bspwm sxhkd
+* nano ~/.xinitrc
+sxhkd &
+exec bspwm
+
+## 17. Install login manager
+* sudo pacman -S lightdm-gtk-greeter
+* systemctl enable lightdm.service
+* reboot
+
+## 19. Init pacman keyring
+* sudo pacman-key --init
+* sudo dirmngr (ctrl+c)
+* sudo pacman-key -r 962DDE58
+* sudo pacman-key --lsign-key 962DDE58
+
+## 20. Install zsh
+* sudo pacman -S zsh
+* touch ~/.zshrc
+* yaourt prezto-git
+* chsh -s /bin/zsh
+
+## 21. Install zim
+* git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
+* setopt EXTENDED_GLOB
+for template_file ( ${ZDOTDIR:-${HOME}}/.zim/templates/* ); do
+  user_file="${ZDOTDIR:-${HOME}}/.${template_file:t}"
+  touch ${user_file}
+  ( print -rn "$(<${template_file})$(<${user_file})" >! ${user_file} ) 2>/dev/null
+done
+* chsh -s =zsh
+
+## 21. Clone your favorite ArchDotfiles and link all files (ln -s)
+
+* reboot
+
+DONE ENJOY :)
