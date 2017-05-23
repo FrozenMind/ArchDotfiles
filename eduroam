@@ -1,0 +1,16 @@
+Description='Automatically generated profile by wifi-menu'
+Interface=wlp2s0
+Connection=wireless
+Security='wpa-configsection'
+ESSID=eduroam
+IP=dhcp
+WPAConfigSection=(
+	'ssid="eduroam"'
+	'key_mgmt=WPA-EAP'
+	'eap=TTLS'
+	'anonymous_identity="anonymous@dhbw-mannheim.de"'
+	'identity="yourStudyMail"'
+	'password="yourPassword"'
+	'ca_cert="/etc/ssl/certs/Deutsche_Telekom_Root_CA_2.pem"'
+	'phase2="autheap=MSCHAPV2"'
+)
