@@ -30,7 +30,7 @@ extra7  = #f4f1ed
 
 
 [bar/main]
-monitor = LVDS1
+monitor = eDP-1
 override-redirect = false
 bottom = false
 
@@ -61,7 +61,7 @@ font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm caffeine updates
 modules-center = date
-modules-right = wifi wired changebrightness volume battery powermenu
+modules-right = wifi backlight volume battery powermenu
 
 dim-value = 1.0
 
@@ -146,7 +146,7 @@ label-empty-padding = 1
 
 [module/wifi]
 type = internal/network
-interface = wlp3s0
+interface = wlp2s0
 interval = 3.0
 ;udspeed-minwidth = 3
 
@@ -163,15 +163,6 @@ animation-packetloss-0 = 
 animation-packetloss-0-foreground = ${colors.red}
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
-
-
-[module/wired]
-type = internal/network
-interface = enp2s0f0
-interval = 3.0
-
-label-connected = %local_ip%
-label-connected-font = 3
 
 
 [module/date]
@@ -209,8 +200,8 @@ ramp-headphones-1 = 
 type = internal/battery
 full-at = 98
 
-battery = BAT1
-adapter = ACAD
+battery = BAT0
+adapter = AC0
 
 label-charging = %percentage%%
 label-charging-foreground = ${colors.yellow}
@@ -312,18 +303,39 @@ label = %output%
 click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset dpms 600 1800 1800; xset s on; fi
 
 
-[module/changebrightness]
-type = custom/script
+[module/backlight]
+type = internal/xbacklight
 
-exec = echo ${$(xbacklight)/.*}
-interval = 3
+; XRandR output to get get values from
+; Default: the monitor defined for the running bar
+output = eDP-1
 
+; Create scroll handlers used to set the backlight value
+; Default: true
+enable-scroll = false
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
 format = <label>
-format-foreground = ${colors.blue}
 
-label = %output%%
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
 
-click-left = if [ $(xbacklight | cut -c1-2) -lt 100 ]; then xbacklight -inc 5; fi
-click-right = if [ $(xbacklight | cut -c1-2) -gt 9 ]; then xbacklight -dec 5; fi
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
 
 ; vim:ft=dosini

@@ -81,6 +81,7 @@ alias df='df -h' # human-readable sizes
 alias ls='ls -FX --group-directories-first --color=always --human-readable'
 alias updatePac='sudo pacman -Syu'
 alias updateAur='yaourt -Syu --aur'
+alias -g "kbd_backlight"="/bin/bash /usr/local/share/kbd_backlight"
 #calendar
 alias caly='cal -m -w -y'
 alias cal='cal -m'
