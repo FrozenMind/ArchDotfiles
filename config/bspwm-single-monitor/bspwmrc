@@ -55,10 +55,10 @@ bspc rule -a Soffice desktop=^5
 
 compton -b &
 udiskie -q &
-feh --bg-center ~/paris.jpg
-#xss-lock -- i3lock -i ~/Pictures/MiamiCityPurple.png -e &
-xss-lock -- i3lock-fancy &
+feh --bg-center ~/Pictures/sunrise.jpg
+#xss-lock -- i3lock -i ~/Pictures/paris.png -e &
+xss-lock -- i3lock-fancy -p &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
-kbd_backlight max
+kbd_backlight 1
 ~/.bin/laptopautostart.sh

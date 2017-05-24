@@ -27,7 +27,7 @@
     browser = /usr/bin/firefox -new-tab
     icon_position = left
     max_icon_size = 100
-    icon_folders = /usr/share/icons/Adwaita
+    icon_folders = /usr/share/icons/Numix
 
 [frame]
     width = 2
@@ -68,18 +68,22 @@
 [dropbox_added]
   appname = Dropbox
   summary = "*added*"
-  foreground = "#00ff00"
+  foreground = "#007ee5"
+  icon = /usr/share/icons/Numix/16/places/folder-dropbox.svg
   timeout = 3
 
 [dropbox_deleted]
   appname = Dropbox
   summary = "*deleted*"
-  foreground = "#ff0000"
+  foreground = "#007ee5"
+  icon = /usr/share/icons/Numix/16/places/folder-dropbox.svg
   timeout = 3
 
 [dropbox_changed]
   appname = Dropbox
   summary = "*changed*"
-  foreground = "#0000ff"
+  foreground = "#007ee5"
+  icon = /usr/share/icons/Numix/16/places/folder-dropbox.svg
   timeout = 3
+
 # vim: ft=cfg
