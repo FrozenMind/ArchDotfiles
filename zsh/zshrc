@@ -39,18 +39,6 @@ weather() {
   curl -4 -k https://wttr.in/$1
 }
 
-# Create new directory and cd into it
-# ===================================
-alias md='__make_and_change_directory'
-
-__make_and_change_directory() {
-    for v in "$@"
-    do
-        mkdir "$v"
-        cd "$v"
-    done
-}
-
 # Useful enter-key
 # ================
 __magic-enter () {
@@ -82,6 +70,8 @@ alias ls='ls -FX --group-directories-first --color=always --human-readable'
 alias updatePac='sudo pacman -Syu'
 alias updateAur='yaourt -Syu --aur'
 alias -g "kbd_backlight"="/bin/bash /usr/local/share/kbd_backlight"
+alias md='markdown-reader'
+alias i3lock-fancy-ws1="bspc desktop -f '^1' && xset s activate"
 #calendar
 alias caly='cal -m -w -y'
 alias cal='cal -m'
