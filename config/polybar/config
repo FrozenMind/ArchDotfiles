@@ -9,26 +9,13 @@
 
 
 [colors]
-bg      = #88000000
-black   = #aa000000
-grey    = #885a647e
-silver  = #e6e1dc
-white   = #f9f7f3
-red     = #da4939
-green   = #a5c261
-lgreen  = #cc00ff00
-lorange = #ffae19
-yellow  = #88ffc66d
-blue    = #6d9cbe
-purple  = #b6b3eb
-teal    = #519f50
-extra1  = #f9f7f3
-extra2  = #cc7833
-extra3  = #bc9458
-extra4  = #272935
-extra5  = #3a4055
-extra6  = #d4cfc9
-extra7  = #f4f1ed
+bg      = #88000000                                                             
+black   = #000000                                                               
+yellow  = #fdcf58                                                               
+gray    = #757676                                                               
+lorange = #f27d0c                                                               
+dorange = #f07f13                                                               
+dred     = #800909    
 
 
 [bar/right]
@@ -48,21 +35,21 @@ background = ${colors.bg}
 foreground = ${colors.lorange}
 
 line-size   = 2
-line-color  = ${colors.extra5}
+line-color  = ${colors.dorange}
 
 border-bottom-size = 0
-border-bottom-color = ${colors.extra4}
+border-bottom-color = ${colors.dorange
 
 padding = 1
-module-margin-left = 2
+module-margin-left = 3
 module-margin-right = 1
 
-font-0 = "Overpass Mono:size=11;2"
-font-1 = "FontAwesome:size=11;2"
-font-2 = "Overpass:size=11;2"
+font-0 = "Overpass Mono:size=10;2"
+font-1 = "FontAwesome:size=10;2"
+font-2 = "Overpass:size=10;2"
 
 modules-left = bspwm
-;modules-center = 
+modules-center = music
 modules-right = date powermenu
 
 dim-value = 1.0
@@ -87,22 +74,22 @@ background = ${colors.bg}
 foreground = ${colors.lorange}
 
 line-size   = 2
-line-color  = ${colors.extra5}
+line-color  = ${colors.dorange}
 
 border-bottom-size = 0
-border-bottom-color = ${colors.extra4}
+border-bottom-color = ${colors.dorange}
 
 padding = 1
-module-margin-left = 2
+module-margin-left = 3
 module-margin-right = 1
 
-font-0 = "Overpass Mono:size=11;2"
-font-1 = "FontAwesome:size=11;2"
-font-2 = "Overpass:size=11;2"
+font-0 = "Overpass Mono:size=10;2"
+font-1 = "FontAwesome:size=10;2"
+font-2 = "Overpass:size=10;2"
 
-modules-left = bspwm caffeine updates
+modules-left = bspwm caffeine volume updates
 modules-center = cpu temp memory wired
-modules-right =  changebrightness date powermenu
+modules-right = date powermenu
 
 dim-value = 1.0
 
@@ -118,17 +105,17 @@ enable-click = true
 enable-scroll = false
 
 ; ws-icon-[0-9]+ = label;icon
-ws-icon-0 = home;
-ws-icon-1 = browse;
-ws-icon-2 = files;
-ws-icon-3 = mail; 
-ws-icon-4 = music;
-ws-icon-5 = code;
-ws-icon-6 = android;
-ws-icon-7 = gaming;
-ws-icon-8 = vbox;
-ws-icon-9 = empty;
-ws-icon-default = 
+ws-icon-0 = home;                                                              
+ws-icon-1 = browse;                                                            
+ws-icon-2 = files;                                                             
+ws-icon-3 = mail;                                                              
+ws-icon-4 = code;                                                              
+ws-icon-5 = android;                                                           
+ws-icon-6 = music;                                                             
+ws-icon-7 = vbox;                                                              
+ws-icon-8 = empty1;                                                            
+ws-icon-9 = empty2;                                                            
+ws-icon-default =   
 
 format = <label-state>
 
@@ -139,8 +126,8 @@ label-monitor-font = 3
 
 label-focused = %icon%
 label-focused-background = ${colors.black}
-label-focused-overline= ${colors.red}
-label-focused-underline= ${colors.red}
+label-focused-overline= ${colors.dred}
+label-focused-underline= ${colors.dred}
 label-focused-padding = 1
 
 label-occupied = %icon%
@@ -151,13 +138,13 @@ label-urgent-background = ${colors.lorange}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.grey}
+label-empty-foreground = ${colors.gray}
 label-empty-padding = 1
 
 
 [module/date]
 type = internal/date
-label = %{F#88ffc66d} %{F#ffae19}%date% %{F#88ffc66d} %{F#ffae19}%time%
+label =  %date%  %time%
 date = %a %d.%m.
 time = %H:%M
 interval = 5
@@ -171,19 +158,20 @@ type = internal/volume
 
 mapping = true
 
-format-volume = <ramp-volume><label-volume>
+; Tags: <label-volume>
+format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
 label-volume-foreground = ${colors.lorange}
 
 label-muted = 
-label-muted-foreground = ${colors.blue}
+label-muted-foreground = ${colors.dred}
 
-ramp-volume-0 = 
+ramp-volume-0 = %{F#fdcf58}
 ramp-volume-1 = 
 
 ramp-headphones-0 = 
-ramp-headphones-1 = 
+ramp-headphones-1 =    
 
 
 [module/cpu]
@@ -210,80 +198,69 @@ type = internal/memory
 interval = 3
 
 format = <label>
-label = RAM %percentage_used%% / %gb_free%
-
-;bar-used-indicator =
-;bar-used-width = 50
-;bar-used-foreground-0 = #55aa55
-;bar-used-foreground-1 = #557755
-;bar-used-foreground-2 = #f5a70a
-;bar-used-foreground-3 = #ff5555
-;bar-used-fill = ▐
-;bar-used-empty = ▐
-;bar-used-empty-foreground = #444444
-
+label =  %percentage_used%%
 
 
 [module/updates]
 type = custom/script
 exec = ~/.bin/getpacmanupdates
-format-foreground = ${colors.blue}
+format-foreground = ${colors.dred}
 interval = 360
 
 
 [module/powermenu]
 type = custom/menu
 
-label-open = 
+label-open = %{F#800909}
 label-close = 
-label-separator = -/-
+label-separator = -/- 
 
 menu-0-0 = 
-menu-0-0-foreground = ${colors.blue}
+menu-0-0-foreground = ${colors.dorange}
 menu-0-0-exec = menu-open-1
 
 menu-0-1 = 
-menu-0-1-foreground = ${colors.blue}
+menu-0-1-foreground = ${colors.dorange}
 menu-0-1-exec = menu-open-2
 
 menu-0-2 = 
-menu-0-2-foreground = ${colors.blue}
+menu-0-2-foreground = ${colors.dorange}
 menu-0-2-exec = menu-open-3
 
 menu-0-3 = 
-menu-0-3-foreground = ${colors.blue}
+menu-0-3-foreground = ${colors.dorange}
 menu-0-3-exec = menu-open-4
 
 menu-1-0 = 
-menu-1-0-foreground = ${colors.lgreen}
+menu-1-0-foreground = ${colors.dred}
 menu-1-0-exec = xset s activate
 
 menu-1-1 = 
-menu-1-1-foreground = ${colors.red}
+menu-1-1-foreground = ${colors.gray}
 menu-1-1-exec = menu-open-0
 
 menu-2-0 = 
-menu-2-0-foreground = ${colors.lgreen}
+menu-2-0-foreground = ${colors.dred}
 menu-2-0-exec = bspc quit
 
 menu-2-1 = 
-menu-2-1-foreground = ${colors.red}
+menu-2-1-foreground = ${colors.gray}
 menu-2-1-exec = menu-open-0
 
 menu-3-0 = 
-menu-3-0-foreground = ${colors.lgreen}
+menu-3-0-foreground = ${colors.dred}
 menu-3-0-exec = shutdown -r now
 
 menu-3-1 = 
-menu-3-1-foreground = ${colors.red}
+menu-3-1-foreground = ${colors.gray}
 menu-3-1-exec = menu-open-0
 
 menu-4-0 = 
-menu-4-0-foreground = ${colors.lgreen}
+menu-4-0-foreground = ${colors.dred}
 menu-4-0-exec = shutdown -h now
 
 menu-4-1 = 
-menu-4-1-foreground = ${colors.red}
+menu-4-1-foreground = ${colors.gray}
 menu-4-1-exec = menu-open-0
 
 
@@ -294,26 +271,11 @@ exec = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then echo ""; else
 interval = 3
 
 format = <label>
-format-foreground = ${colors.blue}
+format-foreground = ${colors.lorange}
 
 label = %output%
 
-click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset +dpms; xset s on; fi
-
-
-[module/changebrightness]
-type = custom/script
-
-exec = echo ${$(xbacklight)/.*}
-interval = 3
-
-format = <label>
-format-foreground = ${colors.blue}
-
-label = %output%%
-
-click-left = if [ $(xbacklight | cut -c1-2) -lt 100 ]; then xbacklight -inc 5; fi
-click-right = if [ $(xbacklight | cut -c1-2) -gt 9 ]; then xbacklight -dec 5; fi
+click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset dpms 600 1800 1800; xset s on; fi
 
 
 [module/temp]
@@ -356,7 +318,7 @@ label-warn-foreground = #0
 ramp-0 = ▁
 ramp-1 = ▃
 ramp-2 = ▅
-ramp-foreground = $(colors.red)
+ramp-foreground = $(colors.dred)
 
 
 [module/wired]
@@ -366,6 +328,17 @@ interval = 3.0
 
 label-connected = %local_ip%
 label-connected-font = 3
+
+
+;[module/music]                                                                  
+;type = custom/script                                                            
+;interval = 5                                                                    
+                                                                                 
+;format = <label>                                                                
+;format-foreground = ${colors.dorange}                                           
+                                                                                 
+;label = %output%                                                                
+;exec = ~/.bin/mpris.sh 
 
 
 ; vim:ft=dosini
