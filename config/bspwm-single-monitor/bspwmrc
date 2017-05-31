@@ -60,5 +60,4 @@ feh --bg-center ~/Pictures/sunrise.jpg
 xss-lock -- i3lock-fancy -p &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
-kbd_backlight 1
 ~/.bin/laptopautostart.sh
