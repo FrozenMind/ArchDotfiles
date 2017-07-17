@@ -144,9 +144,9 @@ XF86KbdBrightnessUp
   /usr/local/share/kbd_backlight up
 
 # Monitor
-#XF86MonBrightnessDown
+XF86MonBrightnessDown
   backlight down
-#XF86MonBrightnessUp
+XF86MonBrightnessUp
   backlight up
 
 
