@@ -50,6 +50,8 @@ bspc rule -a libreoffice-draw desktop=^5
 bspc rule -a libreoffice-math desktop=^5
 bspc rule -a libreoffice-startcenter desktop=^5
 bspc rule -a Soffice desktop=^5
+bspc rule -a TeamSpeak desktop=^4
+bspc rule -a Gnome-clocks state=floating
 
 
 
