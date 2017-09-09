@@ -7,14 +7,18 @@
 ;
 ;=====================================================
 [colors]
-bg      = #88000000
+; argb
+bg      = #aa000000
 black   = #000000
 yellow  = #fdcf58
 gray    = #757676
 lorange = #f27d0c
 dorange = #f07f13
-dred     = #800909
-
+dred    = #7f0000
+dgreen  = #007f00
+dblue   = #003388
+white   = #ffffff
+lblue   = #33b2d8ff
 
 [bar/main]
 monitor = eDP-1
@@ -30,25 +34,26 @@ offset-x = 0
 offset-y = 0
 
 background = ${colors.bg}
-foreground = ${colors.lorange}
+foreground = ${colors.white}
 
 line-size   = 2
-line-color  = ${colors.dorange}
+line-color  = ${colors.white}
 
-border-bottom-size = 0
-border-bottom-color = ${colors.dorange}
+border-bottom-size = 1
+border-bottom-color = ${colors.white}
 
 padding = 1
-module-margin-left = 3
-module-margin-right = 1
+module-margin-left = 7
+module-margin-right = 0
 
-font-0 = "Overpass Mono:size=11;2"
+font-0 = "Roboto:size=13;2"
+; font-0 = "Overpass Mono:size=11:weight=bold;2"
 font-1 = "FontAwesome:size=11;2"
-font-2 = "Overpass:size=11;2"
+; font-2 = "Overpass:size=11;2"
 
-modules-left = bspwm wifi music
-modules-center = date memory
-modules-right = updates backlight caffeine volume battery powermenu
+modules-left = bspwm music
+modules-center = wifi date memory
+modules-right = updates caffeine volume battery powermenu
 
 dim-value = 1.0
 
@@ -92,6 +97,8 @@ inline-mode = false
 enable-click = true
 enable-scroll = false
 
+label-font = 2
+
 ;ws-icon-[0-9]+ = label;icon
 ws-icon-0 = home;
 ws-icon-1 = browse;
@@ -108,26 +115,29 @@ ws-icon-default = 
 
 format = <label-state>
 
-label-font = 3
-
 label-monitor = %name%
 label-monitor-font = 3
 
 label-focused = %icon%
-label-focused-background = ${colors.black}
-label-focused-overline= ${colors.dred}
-label-focused-underline= ${colors.dred}
+label-focused-background = ${colors.dblue}
+label-focused-foreground = ${colors.white}
+label-focused-overline= ${colors.gray}
+label-focused-underline= ${colors.gray}
 label-focused-padding = 1
 
 label-occupied = %icon%
+label-occupied-foreground = ${colors.dblue}
 label-occupied-padding = 1
 
+label-dimmed-foreground = ${colors.dblue}
+label-dimmed-focused-background = ${colors.gray}
+
 label-urgent = %icon%
-label-urgent-background = ${colors.lorange}
+label-urgent-background = ${colors.dblue}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.gray}
+label-empty-foreground = ${colors.lblue}
 label-empty-padding = 1
 
 
@@ -138,7 +148,8 @@ interval = 3.0
 ;udspeed-minwidth = 3
 
 format-connected = <label-connected>
-label-connected =  %essid:0:15:...%
+label-connected =  
+label-connected-foreground = ${colors.dgreen}
 label-connected-font = 3
 
 format-disconnected = <label-disconnected>
@@ -147,7 +158,7 @@ label-disconnected-foreground = ${colors.dred}
 
 format-packetloss = <animation-packetloss>
 animation-packetloss-0 = 
-animation-packetloss-0-foreground = ${colors.dred}
+animation-packetloss-0-foreground = ${colors.dgreen}
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
 
@@ -155,6 +166,7 @@ animation-packetloss-framerate = 500
 [module/date]
 type = internal/date
 label =  %date%  %time%
+label-foreground = ${colors.dgreen}
 date = %a %d.%m.
 time = %H:%M
 interval = 5
@@ -172,12 +184,13 @@ mapping = true
 format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
-label-volume-foreground = ${colors.lorange}
+label-volume-foreground = ${colors.dred}
 
 label-muted = 
-label-muted-foreground = ${colors.dred}
+label-muted-foreground = ${colors.gray}
 
-ramp-volume-0 = %{F#fdcf58}
+ramp-volume-foreground = ${colors.dred}
+ramp-volume-0 = 
 ramp-volume-1 = 
 
 ramp-headphones-0 = 
@@ -192,26 +205,26 @@ battery = BAT0
 adapter = AC0
 
 label-charging = %percentage%%
-label-charging-foreground = ${colors.gray}
+label-charging-foreground = ${colors.dred}
 label-discharging = %percentage%%
-label-discharging-foreground = ${colors.dorange}
+label-discharging-foreground = ${colors.dred}
 label-full = 
-label-full-foreground = ${colors.gray}
+label-full-foreground = ${colors.dred}
 
 format-charging = <label-charging> <ramp-capacity>
 format-discharging = <label-discharging> <ramp-capacity>
 format-full = <label-full>
 
 ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${colors.dred}
+ramp-capacity-0-foreground = ${colors.dgreen}
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${colors.dorange}
+ramp-capacity-1-foreground = ${colors.dred}
 ramp-capacity-2 = 
-ramp-capacity-2-foreground = ${colors.dorange}
+ramp-capacity-2-foreground = ${colors.dred}
 ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.lorange}
+ramp-capacity-3-foreground = ${colors.dred}
 ramp-capacity-4 = 
-ramp-capacity-4-foreground = ${colors.lorange}
+ramp-capacity-4-foreground = ${colors.dred}
 
 
 [module/updates]
@@ -229,23 +242,23 @@ label-close = 
 label-separator = -/-
 
 menu-0-0 = 
-menu-0-0-foreground = ${colors.dorange}
+menu-0-0-foreground = ${colors.dgreen}
 menu-0-0-exec = menu-open-1
 
 menu-0-1 = 
-menu-0-1-foreground = ${colors.dorange}
+menu-0-1-foreground = ${colors.dgreen}
 menu-0-1-exec = menu-open-2
 
 menu-0-2 = 
-menu-0-2-foreground = ${colors.dorange}
+menu-0-2-foreground = ${colors.dgreen}
 menu-0-2-exec = menu-open-3
 
 menu-0-3 = 
-menu-0-3-foreground = ${colors.dorange}
+menu-0-3-foreground = ${colors.dgreen}
 menu-0-3-exec = menu-open-4
 
 menu-1-0 = 
-menu-1-0-foreground = ${colors.dred}
+menu-1-0-foreground = ${colors.dblue}
 menu-1-0-exec = xset s activate
 
 menu-1-1 = 
@@ -253,7 +266,7 @@ menu-1-1-foreground = ${colors.gray}
 menu-1-1-exec = menu-open-0
 
 menu-2-0 = 
-menu-2-0-foreground = ${colors.dred}
+menu-2-0-foreground = ${colors.dblue}
 menu-2-0-exec = bspc quit
 
 menu-2-1 = 
@@ -261,7 +274,7 @@ menu-2-1-foreground = ${colors.gray}
 menu-2-1-exec = menu-open-0
 
 menu-3-0 = 
-menu-3-0-foreground = ${colors.dred}
+menu-3-0-foreground = ${colors.dblue}
 menu-3-0-exec = shutdown -r now
 
 menu-3-1 = 
@@ -269,7 +282,7 @@ menu-3-1-foreground = ${colors.gray}
 menu-3-1-exec = menu-open-0
 
 menu-4-0 = 
-menu-4-0-foreground = ${colors.dred}
+menu-4-0-foreground = ${colors.dblue}
 menu-4-0-exec = shutdown -h now
 
 menu-4-1 = 
@@ -284,46 +297,11 @@ exec = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then echo ""; else
 interval = 3
 
 format = <label>
-format-foreground = ${colors.lorange}
+format-foreground = ${colors.dred}
 
 label = %output%
 
 click-left = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then xset -dpms; xset s off; else xset dpms 600 1800 1800; xset s on; fi
-
-
-[module/backlight]
-type = internal/xbacklight
-
-; XRandR output to get get values from
-; Default: the monitor defined for the running bar
-output = eDP-1
-
-; Create scroll handlers used to set the backlight value
-; Default: true
-enable-scroll = false
-
-; Available tags:
-;   <label> (default)
-;   <ramp>
-;   <bar>
-format = <label>
-
-; Available tokens:
-;   %percentage% (default)
-label = %percentage%%
-
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-; Only applies if <bar> is used
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
 
 
 [module/music]
@@ -331,9 +309,9 @@ type = custom/script
 interval = 5
 
 format = <label>
-format-foreground = ${colors.dorange}
+format-foreground = ${colors.dblue}
 
-label = %output%
+label = %output:0:20:..%
 exec = ~/.bin/mpris.sh
 
 
@@ -362,6 +340,7 @@ interval = 3
 
 format = <label>
 label =  %percentage_used%%
+label-foreground = ${colors.dgreen}
 
 
 

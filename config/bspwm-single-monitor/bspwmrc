@@ -57,7 +57,7 @@ bspc rule -a KeePass2 state=floating
 
 compton -b &
 udiskie -q &
-feh --bg-center ~/Pictures/sunrise.jpg
+feh --bg-center ~/Pictures/threecolor_starwars.png
 #xss-lock -- i3lock -i ~/Pictures/paris.png -e &
 xss-lock -- i3lock-fancy -p &
 ~/.config/polybar/launch.sh
