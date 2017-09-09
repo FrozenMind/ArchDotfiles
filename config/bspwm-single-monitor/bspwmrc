@@ -52,7 +52,7 @@ bspc rule -a libreoffice-startcenter desktop=^5
 bspc rule -a Soffice desktop=^5
 bspc rule -a TeamSpeak desktop=^4
 bspc rule -a Gnome-clocks state=floating
-
+bspc rule -a KeePass2 state=floating
 
 
 compton -b &

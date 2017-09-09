@@ -61,7 +61,7 @@ bindkey "^M" __magic-enter
 # Aliases
 #==============================================================================
 
-alias vi=vim
+alias v='vim'
 alias view='vim -R'
 alias grep='nocorrect grep --color=always -d skip'
 alias cp='nocorrect cp -i' # confirm before overwriting something

@@ -1,7 +1,7 @@
 [global]
     font = Hack 10
     markup = full
-    format = "<b>%s</b> %p\n%b"
+    format = "<b>%s</b> %p\n\n%b"
     sort = no
     indicate_hidden = yes
     alignment = left
