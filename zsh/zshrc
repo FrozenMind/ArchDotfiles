@@ -75,5 +75,11 @@ alias i3lock-fancy-ws1="bspc desktop -f '^1' && xset s activate"
 #calendar
 alias caly='cal -m -w -y'
 alias cal='cal -m'
+#git
+alias gita="git add"
+alias gitc="git commit -m"
+alias gitp="git push"
+alias gits="git status"
+alias gitd="git diff"
 
 export DEFAULT_USER=valentin
