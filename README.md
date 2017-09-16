@@ -1,5 +1,7 @@
 # Dotfiles For My ArchLinux System
 
+For more detailed stuff about my Arch system check: http://games-broduction.com/arch-dotfiles/
+
 ## About
 * WM: BSPWM
 * Keybinds: Sxhkd
