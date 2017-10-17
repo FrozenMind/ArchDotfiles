@@ -40,7 +40,7 @@ line-size   = 2
 line-color  = ${colors.white}
 
 border-bottom-size = 1
-border-bottom-color = ${colors.white}
+border-bottom-color = ${colors.black}
 
 padding = 1
 module-margin-left = 7

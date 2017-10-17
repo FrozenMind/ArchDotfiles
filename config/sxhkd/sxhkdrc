@@ -26,6 +26,10 @@ super + Escape
 Print
   scrot '%d%m%Y_%s_%wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
+#run calculator
+XF86Calculator
+  gnome-calculator
+
 #
 # bspwm hotkeys
 #
@@ -36,7 +40,7 @@ super + alt + Escape
 
 #lock screen
 super + l
-  i3lock-fancy-ws1
+  xset s activate
 
 # close and kill
 super + {_,shift + }w
