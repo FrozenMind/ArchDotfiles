@@ -270,11 +270,23 @@ exec bspwm
 
 `reboot`
 #### Now lightdm should start and you should be able to login and you should see a terminal
-#### now u got a terminal where u can install your favorite browser and choose some dotfiles
-#### u need a good sxhdrc
+#### now u got a terminal where u can install your favorite browser and load some dotfiles
 
-## Here you go. You done the installation.
-## Now you can install your favorite Programms and config your system
-## I have a list in my git folder with my programs to get ideas what you will need
+## 21. Auto connect to wifi
+#### install wpa_actiond
+`yaourt wpa_actiond`
+#### check your wifi interface name
+`ip link`
+#### enable interface
+`systemctl enable netctl-auto@interface.service`
+
+.
+
+.
+
+.
+
+#### Here you go. You done the installation.
+#### Check out my git repo to get a list with some cool programs like image viewers, font, ...
 
 # ENJOY :)
