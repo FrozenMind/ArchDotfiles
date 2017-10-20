@@ -52,8 +52,8 @@ font-1 = "FontAwesome:size=11;2"
 ; font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm music
-modules-center = wifi date memory
-modules-right = updates caffeine volume battery powermenu
+modules-center = wifi memory cpu temperature
+modules-right = updates date caffeine volume battery powermenu
 
 dim-value = 1.0
 
@@ -144,11 +144,11 @@ label-empty-padding = 1
 [module/wifi]
 type = internal/network
 interface = wlp2s0
-interval = 3.0
+interval = 5
 ;udspeed-minwidth = 3
 
 format-connected = <label-connected>
-label-connected =  
+label-connected = %signal%   %local_ip%
 label-connected-foreground = ${colors.dgreen}
 label-connected-font = 3
 
@@ -165,8 +165,8 @@ animation-packetloss-framerate = 500
 
 [module/date]
 type = internal/date
-label =  %date%  %time%
-label-foreground = ${colors.dgreen}
+label =  %date%  %time%
+label-foreground = ${colors.dred}
 date = %a %d.%m.
 time = %H:%M
 interval = 5
@@ -336,13 +336,66 @@ exec = ~/.bin/mpris.sh
 
 [module/memory]
 type = internal/memory
-interval = 3
+interval = 5
 
 format = <label>
 label =  %percentage_used%%
 label-foreground = ${colors.dgreen}
 
 
+[module/cpu]
+type = internal/cpu
+interval =5
+
+format = <label>
+label =  %percentage%%
+label-foreground = ${colors.dgreen}
+
+
+[module/temperature]
+type = internal/temperature
+interval = 5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Threshold temperature to display warning label
+; Default: 80
+warn-temperature = 50
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+label-foreground = ${colors.dgreen}
+
+label-warn = %temperature%
+label-warn-foreground = ${colors.dred}
+
+; Requires the <ramp> tag
+; The icon selection will range from 0 to `warn-temperature`
+; with the current temperature as index.
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.dgreen}
 
 
 ; vim:ft=dosini
