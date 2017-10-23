@@ -8,11 +8,11 @@ super + Return
 
 # program launcher
 super + space
-	rofi -show drun
+	rofi -show drun -show-icons 'true'
 
 #show active windows
 super + Tab
-  rofi -show window
+  rofi -show window -show-icons 'true'
 
 #toggle compton
 super + alt + t
