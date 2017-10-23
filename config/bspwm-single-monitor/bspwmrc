@@ -10,7 +10,7 @@ ws5=code
 ws6=android
 ws7=music
 ws8=vbox
-ws9=empty1
+ws9=edit
 ws0=empty2
 
 bspc config border_width          1
@@ -53,13 +53,13 @@ bspc rule -a Spotify desktop=^7
 bspc rule -a VirtualBox state=floating desktop=^8
 bspc rule -a Gedit state=floating
 bspc rule -a Gimp state=floating desktop=^9
-bspc rule -a libreoffice-writer desktop=^5 state=tiled
-bspc rule -a libreoffice-calc desktop=^5 state=tiled
-bspc rule -a libreoffice-impress desktop=^5 state=tiled
-bspc rule -a libreoffice-draw desktop=^5 state=tiled
-bspc rule -a libreoffice-math desktop=^5 state=tiled
-bspc rule -a libreoffice-startcenter desktop=^5 state=tiled
-bspc rule -a Soffice desktop=^5
+bspc rule -a libreoffice-writer desktop=^9 state=tiled
+bspc rule -a libreoffice-calc desktop=^9 state=tiled
+bspc rule -a libreoffice-impress desktop=^9 state=tiled
+bspc rule -a libreoffice-draw desktop=^9 state=tiled
+bspc rule -a libreoffice-math desktop=^9 state=tiled
+bspc rule -a libreoffice-startcenter desktop=^9 state=tiled
+bspc rule -a Soffice desktop=^9
 bspc rule -a TeamSpeak desktop=^4
 bspc rule -a Gnome-clocks state=floating
 bspc rule -a KeePass2 state=floating
