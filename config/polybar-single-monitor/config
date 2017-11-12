@@ -8,17 +8,18 @@
 ;=====================================================
 [colors]
 ; argb
-bg      = #aa000000
+bg      = #77ffffff
 black   = #000000
 yellow  = #fdcf58
 gray    = #757676
 lorange = #f27d0c
 dorange = #f07f13
 dred    = #7f0000
-dgreen  = #007f00
-dblue   = #0059b2
+dgreen  = #005f00
+dblue   = #005992
 white   = #ffffff
-lblue   = #33b2d8ff
+lblue   = #aa3c9eff
+none    = #00000000
 
 [bar/main]
 monitor = eDP-1
@@ -34,7 +35,7 @@ offset-x = 0
 offset-y = 0
 
 background = ${colors.bg}
-foreground = ${colors.white}
+foreground = ${colors.black}
 
 line-size   = 2
 line-color  = ${colors.white}
@@ -112,7 +113,6 @@ ws-icon-8 = edit;
 ws-icon-9 = empty2;
 ws-icon-default = 
 
-
 format = <label-state>
 
 label-monitor = %name%
@@ -121,8 +121,8 @@ label-monitor-font = 3
 label-focused = %icon%
 label-focused-background = ${colors.dblue}
 label-focused-foreground = ${colors.white}
-label-focused-overline= ${colors.gray}
-label-focused-underline= ${colors.gray}
+label-focused-overline= ${colors.white}
+label-focused-underline= ${colors.white}
 label-focused-padding = 1
 
 label-occupied = %icon%

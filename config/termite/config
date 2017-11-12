@@ -21,55 +21,55 @@ browser = firefox
 # (default if unset: all graphic non-punctuation/space characters)
 #word_chars = -A-Za-z0-9,./?%&#:_=+@~
 
-[colors]
-# Base16 Isotope
-# Author: Jan T. Sott
 
-foreground      = #d0d0d0
-foreground_bold = #e0e0e0
-cursor          = #e0e0e0
-background      = rgba(0,0,0,0.8)
+[colors]
+# Base16 Materia
+# Author: Defman21
+
+foreground      = #CDD3DE
+foreground_bold = #D5DBE5
+cursor          = #D5DBE5
+background      = #262626
 
 # 16 color space
 
 # Black, Gray, Silver, White
-color0  = #000000
-color8  = #808080
-color7  = #d0d0d0
-color15 = #ffffff
+color0  = #263238
+color8  = #707880
+color7  = #CDD3DE
+color15 = #FFFFFF
 
 # Red
-color1  = #ff0000
-color9  = #ff0000
+color1  = #EC5F67
+color9  = #EC5F67
 
 # Green
-color2  = #33ff00
-color10 = #33ff00
+color2  = #8BD649
+color10 = #8BD649
 
 # Yellow
-color3  = #ff0099
-color11 = #ff0099
+color3  = #FFCC00
+color11 = #FFCC00
 
 # Blue
-color4  = #0066ff
-color12 = #0066ff
+color4  = #89DDFF
+color12 = #89DDFF
 
 # Purple
-color5  = #cc00ff
-color13 = #cc00ff
+color5  = #82AAFF
+color13 = #82AAFF
 
 # Teal
-color6  = #00ffff
-color14 = #00ffff
+color6  = #80CBC4
+color14 = #80CBC4
 
 # Extra colors
-color15 = #ffffff
-color16 = #ff9900
-color17 = #3300ff
-color18 = #404040
-color19 = #606060
-color20 = #c0c0c0
-color21 = #e0e0e0
+color16 = #EA9560
+color17 = #EC5F67
+color18 = #2C393F
+color19 = #37474F
+color20 = #C9CCD3
+color21 = #D5DBE5
 
 
 

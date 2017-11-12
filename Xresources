@@ -5,23 +5,23 @@ rofi.padding: 400
 rofi.fullscreen: true
 rofi.terminal: termite
 rofi.font: Hack 25
-rofi.line-margin: 10
+rofi.line-margin: 5
 ! Color theme
 !------------
 ! Use extended color scheme
 rofi.color-enabled:                  true
 ! Color scheme for normal row
 ! background, foreground, background alt, highlight background, highlight foreground
-rofi.color-normal:	argb:60f07f13, argb:ff800909, argb:60fdcf58, argb:60800909, argb:fff07f13
+rofi.color-normal:	argb:20ffffff, argb:ff000000, argb:20ffffff, argb:c0800909, argb:fff07f13
 ! Color scheme for urgent row
 ! background, foreground, background alt, highlight background, highlight foreground
-rofi.color-urgent:	argb:60f07f13, argb:ff800909, argb:60fdcf58, argb:60800909, argb:fff07f13
+rofi.color-urgent:	argb:60f07f13, argb:ff800909, argb:60fdcf58, argb:c0800909, argb:fff07f13
 ! Color scheme for active row
 ! background, foreground, background alt, highlight background, highlight foreground
-rofi.color-active:	argb:60f07f13, argb:ff800909, argb:60fdcf58, argb:60800909, argb:fff07f13
+rofi.color-active:	argb:c0000000, argb:ffffffff, argb:c0000000, argb:60f07f13, argb:ff800909
 ! Color scheme window
 ! background border color *separator color */
-rofi.color-window:	argb:c0757676, #000000
+rofi.color-window:	argb:80ffffff, #000000
 ! Separator style (none, dash, solid)
 rofi.separator-style:	dash
 
