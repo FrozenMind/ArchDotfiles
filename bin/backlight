@@ -1,1 +1,21 @@
-/home/valentin/.bin/backlight
+#!/bin/sh
+
+actual=$(cat /sys/class/backlight/intel_backlight/actual_brightness)
+case "$1" in
+ up)
+	if [ "$actual" -lt 375 ]; then
+		tee /sys/class/backlight/intel_backlight/brightness  <<< $(( "$actual" + 25 ))
+	fi
+  ;;
+ down)
+	if [ "$actual" -gt 50 ]; then
+		tee /sys/class/backlight/intel_backlight/brightness  <<< $(( "$actual" - 25 ))
+	fi
+  ;;
+ max)
+	tee /sys/class/backlight/intel_backlight/brightness  <<< 375
+  ;;
+esac
+
+newactual=$(cat /sys/class/backlight/intel_backlight/actual_brightness)
+notify-send -u low 'Backlight '$(( "$newactual" ))
