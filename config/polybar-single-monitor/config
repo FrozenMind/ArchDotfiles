@@ -8,7 +8,7 @@
 ;=====================================================
 [colors]
 ; argb
-bg      = #77ffffff
+bg      = #55000000
 black   = #000000
 yellow  = #fdcf58
 gray    = #757676
@@ -18,7 +18,7 @@ dred    = #7f0000
 dgreen  = #005f00
 dblue   = #005992
 white   = #ffffff
-lblue   = #aa3c9eff
+lblue   = #443c9eff
 none    = #00000000
 
 [bar/main]
