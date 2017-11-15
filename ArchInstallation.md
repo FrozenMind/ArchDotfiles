@@ -43,7 +43,7 @@
 
 `timedatectl set-ntp true`
 
-**Check if time is right**
+**Check if time is right (this should show UTC time)**
 
 `timedatectl status`
 
@@ -72,7 +72,7 @@ ENTER (1)
 
 ENTER (Start Sector)
 
-`100 MiB` (Size)
+`+100MiB` (Size)
 
 `EF00` (HexCode)
 
@@ -84,7 +84,7 @@ ENTER
 
 ENTER
 
-`250 MiB`
+`+250MiB`
 
 ENTER
 
@@ -111,7 +111,7 @@ ENTER
 
 1 = EFI, 2 = Boot
 
-`mkfs.vfat -F 32 /dev/sdX1`
+`mkfs.vfat -F32 /dev/sdX1`
 
 `mkfs.ext2 /dev/sdX2`
 
@@ -127,6 +127,8 @@ ENTER
 **Choose Password**
 
 **YourMapperName can be everything but shouldnt be to short**
+
+**remember your wrapper name, you will need it later**
 
 `cryptsetup luksOpen /dev/sdX3 YourMapperName`
 
@@ -176,15 +178,15 @@ ENTER
 
 `nano /etc/locale.gen`
 
-**Load your language**
-
-`locale-gen`
-
 **locale.conf should one have one line with your language**
 
 `nano /etc/locale.conf`
 
 LANG=en_US.UTF-8
+
+**Load your language**
+
+`locale-gen`
 
 **Select your timezone**
 
@@ -213,7 +215,7 @@ LANG=en_US.UTF-8
 
 **Edit Sudoers to allow all users to sudo**
 
-`EDITOR=nano visudo`
+`nano /etc/sudoers`
 
 '##Uncomment to allow member of group..
 
