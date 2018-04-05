@@ -43,7 +43,6 @@ bspc monitor eDP-1 -d $ws1 $ws2 $ws3 $ws4 $ws5 $ws6 $ws7 $ws8 $ws9 $ws0
 #bspc desktop $ws2 -l monocle
 
 bspc rule -a Firefox desktop=^2
-bspc rule -a Chromium desktop=^2
 bspc rule -a Thunderbird desktop=^4
 bspc rule -a Termite desktop=^1
 bspc rule -a Nautilus desktop=^3
@@ -66,8 +65,7 @@ bspc rule -a KeePass2 state=floating
 
 
 compton -b &
-udiskie -q &
-	feh --bg-center ~/Pictures/hondacivic.jpg
+feh --randomize --bg-center ~/Pictures/Background/*
 #xss-lock -- i3lock -i ~/Pictures/paris.png -e &
 xss-lock -- i3lock-fancy -p &
 ~/.config/polybar/launch.sh
