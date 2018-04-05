@@ -142,10 +142,10 @@ super + {Left,Down,Up,Right}
 
 # keyboard light control
 XF86KbdBrightnessDown
-  /usr/local/share/kbd_backlight down
+  asus-kbd-backlight down
 
 XF86KbdBrightnessUp
-  /usr/local/share/kbd_backlight up
+  asus-kbd-backlight up
 
 # Monitor
 XF86MonBrightnessDown
