@@ -4,15 +4,11 @@
 # User configuration sourced by interactive shells
 #
 
-#prompt
-#PROMPT=' >> '
-#RPROMPT='%F{yellow}%1~%f'
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
-
-# Source zim
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
-fi
+# Start zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 
 
 # Uncomment the following line if you want to change the command execution time
@@ -71,7 +67,7 @@ alias cp='nocorrect cp -i' # confirm before overwriting something
 alias df='df -h' # human-readable sizes
 alias ls='ls -FX --group-directories-first --color=always --human-readable'
 alias updatePac='sudo pacman -Syu'
-alias updateAur='yaourt -Syu --aur'
+alias updateAur='trizen -Syu --aur'
 alias md='markdown-reader'
 alias l='ls -la'
 #calendar
