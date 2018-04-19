@@ -1,19 +1,17 @@
-while true; do
-CORD=$(acpi -b | awk '{print $3}' | cut -c1)
-if [ "$CORD" == "D" ]
+#!/bin/sh
+
+STATUS=$(acpi -b | awk '{print $3}' | cut -c1)
+if [ "$STATUS" == "D" ]
   then
     BATTLIFE=$(acpi -b | awk '{print $4}' | cut -c1-2)
     if [ "$BATTLIFE" -lt 10 ]
       then
-        notify-send -u critical "BATTERY LOWER THAN 10%"
+        notify-send -u critical "BATTERY LIFE: $BATTLIFE %"
       elif [ "$BATTLIFE" -lt 15 ]
         then
-          notify-send -u critical "BATTERY LOWER THAN 15%"
+          notify-send -u normal "BATTERY LIFE: $BATTLIFE %"
       elif [ "$BATTLIFE" -lt 20 ]
         then
-          notify-send -u normal "BATTERY LOWER THAN 20%"
+          notify-send -u low "BATTERY LIFE: $BATTLIFE %"
     fi
 fi
-notify-send -u normal "bat service done"
-sleep 20
-done
