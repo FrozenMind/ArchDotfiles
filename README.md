@@ -1,12 +1,12 @@
-# Dotfiles For My ArchLinux System
-
-For more detailed stuff about my Arch system check: http://games-broduction.com/arch-dotfiles/
+# Dotfiles For My Arch Linux System
 
 ## About
 * WM: BSPWM
 * Keybinds: Sxhkd
 * Shell: Zsh
 * Statusbar: Polybar
+* Terminal: Termite
+* Encrypted Disk
 
 ## My Hardware Setup (Tower)
 * Mainbaord: Asus Z170-A
