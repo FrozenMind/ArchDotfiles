@@ -1,0 +1,44 @@
+# add user to group
+sudo usermod -aG group user
+
+# copy file to server
+scp user@ip:/path/on/server file
+
+# check battery
+acpi -b
+
+# generate ssh key
+ssh-keygen -t rsa -b 4096 -C "emailaddress"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
+# list drives
+lsblk
+
+# list system info
+inxi -F
+
+# copy .img file to usb stick
+sudo dd of=/dev/sdc0 if=path/to/os.img bs=1m
+
+# unite multiple pdf files
+pdfunite file1.pdf file2.pdf file3.pdf output.pdf
+
+# convert img to pdf or the way around
+convert img.jpg file1.pdf
+
+# convert pdf to text (libreoffice)
+pdftotext file.pdf output.odt
+
+# extract rpm
+rpmextract.sh package.rpm
+
+# search through all files in folder for keywords and print lines
+ag -t "word"
+
+# check windows for propertys like names
+xprop
+
+# check mirror list for fastest 6 mirrors and wirte to file
+sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.pacnew > /etc/pacman.d/mirrorlist.fastest
+
