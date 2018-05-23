@@ -8,17 +8,17 @@
 ;=====================================================
 [colors]
 ; argb
-bg      = #11000000
+bg      = #88ffffff
 black   = #000000
 yellow  = #fdcf58
 gray    = #757676
-lorange = #f27d0c
-dorange = #f07f13
+lorange = #55ff0000
+dorange = #b20000
 dred    = #7f0000
 dgreen  = #005f00
 dblue   = #0059a2
 white   = #ffffff
-lblue   = #333c9eff
+lblue   = #550059a2
 none    = #00000000
 
 [bar/main]
@@ -53,7 +53,7 @@ font-1 = "FontAwesome:size=11;2"
 ; font-2 = "Overpass:size=11;2"
 
 modules-left = bspwm music
-modules-center = wifi memory cpu temperature
+modules-center = wifi memory cpu
 modules-right = updates date caffeine volume battery powermenu
 
 dim-value = 1.0
@@ -119,25 +119,25 @@ label-monitor = %name%
 label-monitor-font = 3
 
 label-focused = %icon%
-label-focused-background = ${colors.dblue}
+label-focused-background = ${colors.dred}
 label-focused-foreground = ${colors.white}
 label-focused-overline= ${colors.white}
 label-focused-underline= ${colors.white}
 label-focused-padding = 1
 
 label-occupied = %icon%
-label-occupied-foreground = ${colors.dblue}
+label-occupied-foreground = ${colors.dorange}
 label-occupied-padding = 1
 
-label-dimmed-foreground = ${colors.dblue}
+label-dimmed-foreground = ${colors.dorange}
 label-dimmed-focused-background = ${colors.gray}
 
 label-urgent = %icon%
-label-urgent-background = ${colors.dblue}
+label-urgent-background = ${colors.dorange}
 label-urgent-padding = 1
 
 label-empty = %icon%
-label-empty-foreground = ${colors.lblue}
+label-empty-foreground = ${colors.lorange}
 label-empty-padding = 1
 
 
@@ -149,7 +149,7 @@ interval = 5
 
 format-connected = <label-connected>
 label-connected = %signal%   %local_ip%
-label-connected-foreground = ${colors.dgreen}
+label-connected-foreground = ${colors.dorange}
 label-connected-font = 3
 
 format-disconnected = <label-disconnected>
@@ -158,16 +158,16 @@ label-disconnected-foreground = ${colors.dred}
 
 format-packetloss = <animation-packetloss>
 animation-packetloss-0 = 
-animation-packetloss-0-foreground = ${colors.dgreen}
+animation-packetloss-0-foreground = ${colors.dorange}
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
 
 
 [module/date]
 type = internal/date
-label =  %date%  %time%
-label-foreground = ${colors.dred}
-date = %a %d.%m.
+label = %date%  %time%
+label-foreground = ${colors.dorange}
+date = %V  %a %d.%m.
 time = %H:%M
 interval = 5
 
@@ -205,11 +205,11 @@ battery = BAT0
 adapter = AC0
 
 label-charging = %percentage%%
-label-charging-foreground = ${colors.dred}
+label-charging-foreground = ${colors.dorange}
 label-discharging = %percentage%%
-label-discharging-foreground = ${colors.dred}
+label-discharging-foreground = ${colors.dorange}
 label-full = 
-label-full-foreground = ${colors.dred}
+label-full-foreground = ${colors.dgreen}
 
 format-charging = <label-charging> <ramp-capacity>
 format-discharging = <label-discharging> <ramp-capacity>
@@ -220,17 +220,17 @@ ramp-capacity-0-foreground = ${colors.dgreen}
 ramp-capacity-1 = 
 ramp-capacity-1-foreground = ${colors.dred}
 ramp-capacity-2 = 
-ramp-capacity-2-foreground = ${colors.dred}
+ramp-capacity-2-foreground = ${colors.dorange}
 ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.dred}
+ramp-capacity-3-foreground = ${colors.dorange}
 ramp-capacity-4 = 
-ramp-capacity-4-foreground = ${colors.dred}
+ramp-capacity-4-foreground = ${colors.dorange}
 
 
 [module/updates]
 type = custom/script
 exec = ~/.bin/getpacmanupdates
-format-foreground = ${colors.dred}
+format-foreground = ${colors.dorange}
 interval = 360
 
 
@@ -297,7 +297,7 @@ exec = if [ $(xset q | grep -c 'DPMS is Enabled') -eq 1 ]; then echo ""; else
 interval = 3
 
 format = <label>
-format-foreground = ${colors.dred}
+format-foreground = ${colors.dorange}
 
 label = %output%
 
@@ -309,7 +309,7 @@ type = custom/script
 interval = 5
 
 format = <label>
-format-foreground = ${colors.dblue}
+format-foreground = ${colors.lorange}
 
 label = %output:0:20:..%
 exec = ~/.bin/mpris.sh
@@ -340,7 +340,7 @@ interval = 5
 
 format = <label>
 label =  %percentage_used%%
-label-foreground = ${colors.dgreen}
+label-foreground = ${colors.dorange}
 
 
 [module/cpu]
@@ -349,7 +349,7 @@ interval =5
 
 format = <label>
 label =  %percentage%%
-label-foreground = ${colors.dgreen}
+label-foreground = ${colors.dorange}
 
 
 [module/temperature]
@@ -384,7 +384,7 @@ format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 
 label = %temperature%
-label-foreground = ${colors.dgreen}
+label-foreground = ${colors.dorange}
 
 label-warn = %temperature%
 label-warn-foreground = ${colors.dred}
@@ -395,7 +395,7 @@ label-warn-foreground = ${colors.dred}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.dgreen}
+ramp-foreground = ${colors.dorange}
 
 
 ; vim:ft=dosini
