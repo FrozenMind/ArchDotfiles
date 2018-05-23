@@ -153,6 +153,9 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
   backlight up
 
+# toggle redshift
+super + alt + r
+  redshift-toggle
 
 # Volume control
 
@@ -166,7 +169,7 @@ XF86AudioRaiseVolume
   pulseaudio-ctl up
 
 XF86AudioPlay
-  playerctl play-pause
+  playerctl play-pause && notify-send -u low "$(playerctl status)"
 
 XF86AudioNext
   playerctl next

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# get process id of running redshift process
+processID=$(ps -ef | grep "redshift -c ${HOME}/.config/redshift.conf" | grep -v grep | awk '{print $2}')
+if [ -z "$processID" ]
+then
+  # no process found, so start redshift
+  notify-send "redshift on"
+  redshift -c ~/.config/redshift.conf &
+else
+  # process found, so kill redshift (turn off)
+  notify-send "redshift off"
+  kill "$processID"
+fi

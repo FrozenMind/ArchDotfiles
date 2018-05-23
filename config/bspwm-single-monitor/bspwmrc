@@ -51,6 +51,7 @@ bspc rule -a jetbrains-studio desktop=^6
 bspc rule -a Spotify desktop=^7
 bspc rule -a VirtualBox state=floating desktop=^8
 bspc rule -a Gedit state=floating
+bspc rule -a Markdown-reader state=floating
 bspc rule -a Gimp state=floating desktop=^9
 bspc rule -a libreoffice-writer desktop=^9 state=tiled
 bspc rule -a libreoffice-calc desktop=^9 state=tiled
@@ -58,7 +59,7 @@ bspc rule -a libreoffice-impress desktop=^9 state=tiled
 bspc rule -a libreoffice-draw desktop=^9 state=tiled
 bspc rule -a libreoffice-math desktop=^9 state=tiled
 bspc rule -a libreoffice-startcenter desktop=^9 state=tiled
-bspc rule -a Soffice desktop=^9
+bspc rule -a Soffice desktop=^9 state=tiled
 bspc rule -a TeamSpeak desktop=^4
 bspc rule -a Gnome-clocks state=floating
 bspc rule -a KeePass2 state=floating
@@ -70,4 +71,5 @@ feh --randomize --bg-center ~/Pictures/Background/*
 xss-lock -- i3lock-fancy -p &
 ~/.config/polybar/launch.sh
 xrdb ~/.Xresources
+redshift -c ~/.config/redshift.conf &
 ~/.bin/laptopautostart.sh
