@@ -12,7 +12,7 @@ ssh-keygen -t rsa -b 4096 -C "emailaddress"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
-# list drives
+# list hard drives & partitions
 lsblk
 
 # list system info
@@ -26,9 +26,13 @@ pdfunite file1.pdf file2.pdf file3.pdf output.pdf
 
 # convert img to pdf or the way around
 convert img.jpg file1.pdf
+convert file.pdf img.jpg
 
 # convert pdf to text (libreoffice)
 pdftotext file.pdf output.odt
+
+# extract pages from pdf
+pdfseparate -f *from* -l *to* source_file dest_file
 
 # extract rpm
 rpmextract.sh package.rpm
@@ -42,3 +46,11 @@ xprop
 # check mirror list for fastest 6 mirrors and wirte to file
 sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.pacnew > /etc/pacman.d/mirrorlist.fastest
 
+# free usbs for arduino ide
+sudo chmod 666 /dev/ttyUSB0
+
+# check existing video cards
+lspci -k | grep -A 2 -E "(VGA|3D)"
+
+# list all active internet connection
+netstat -altupn
