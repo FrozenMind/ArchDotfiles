@@ -54,7 +54,10 @@ zle -N __magic-enter
 bindkey "^M" __magic-enter
 
 # load github showerthoughts
-fortune ~/terminalthoughts/showerthoughts | cowsay | lolcat
+fortune ~/terminalthoughts/showerthoughts | cowsay -f tux | lolcat
+
+#show task
+task long
 
 #==============================================================================
 # Aliases
